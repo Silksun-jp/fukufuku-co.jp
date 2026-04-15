@@ -135,8 +135,8 @@
 
     /* CONTACT */
     #contact { background: var(--off); }
-    .contact-layout { display:grid; grid-template-columns:1fr 1.6fr; gap:6vw; align-items:start; }
-    .contact-desc { font-size:.86rem; line-height:2.3; color:var(--mid); letter-spacing:.04em; margin-bottom:2.5rem; }
+    .contact-layout { max-width: 680px; margin: 0 auto; }
+    .contact-desc { font-size:.86rem; line-height:2.3; color:var(--mid); letter-spacing:.04em; margin-bottom:2.5rem; text-align:center; }
     .contact-services { display:flex; flex-direction:column; gap:.8rem; margin-bottom:2rem; }
     .contact-service-btn { display:flex; align-items:center; gap:1rem; padding:1rem 1.2rem; background:var(--white); border:1px solid var(--line); cursor:pointer; transition:border-color .25s,transform .25s,box-shadow .25s; text-align:left; width:100%; }
     .contact-service-btn:hover,.contact-service-btn.active { border-color:var(--gold); transform:translateX(4px); box-shadow:0 4px 20px rgba(200,169,110,.12); }
@@ -216,7 +216,7 @@
 <!-- HERO -->
 <section id="hero">
   <div class="hero-bg"></div>
-  <div class="hero-kanji">福</div>
+
   <div class="hero-content">
     <span class="hero-en">Fukufuku Co., Ltd.</span>
     <h1 class="hero-catch">すべては調和へと還る</h1>
@@ -355,10 +355,10 @@
 <!-- CONTACT -->
 <section id="contact">
   <div class="section-wrap">
-    <div class="reveal">
+    <div class="reveal" style="text-align:center;">
       <span class="section-en">Contact</span>
       <h2 class="section-ja">お問い合わせ</h2>
-      <span class="section-rule"></span>
+      <span class="section-rule" style="margin:1.8rem auto 0;"></span>
     </div>
     <div class="contact-layout">
       <div class="reveal reveal-d1">
