@@ -134,12 +134,45 @@
     .map-box-text { font-size:.72rem; letter-spacing:.15em; text-align:center; line-height:2; }
 
     /* CONTACT */
-    #contact { background:var(--white); }
-    .contact-inner { max-width:680px; }
-    .contact-desc { font-size:.87rem; line-height:2.4; color:var(--mid); letter-spacing:.04em; margin-bottom:3.5rem; }
-    .contact-form-box { background:var(--off); padding:clamp(2rem,4vw,3.5rem); }
-    .form-placeholder { padding:3rem 2rem; border:1px dashed var(--line); color:var(--light); }
-    .form-placeholder p { font-size:.8rem; letter-spacing:.1em; line-height:2; }
+    #contact { background: var(--off); }
+    .contact-layout { display:grid; grid-template-columns:1fr 1.6fr; gap:6vw; align-items:start; }
+    .contact-desc { font-size:.86rem; line-height:2.3; color:var(--mid); letter-spacing:.04em; margin-bottom:2.5rem; }
+    .contact-services { display:flex; flex-direction:column; gap:.8rem; margin-bottom:2rem; }
+    .contact-service-btn { display:flex; align-items:center; gap:1rem; padding:1rem 1.2rem; background:var(--white); border:1px solid var(--line); cursor:pointer; transition:border-color .25s,transform .25s,box-shadow .25s; text-align:left; width:100%; }
+    .contact-service-btn:hover,.contact-service-btn.active { border-color:var(--gold); transform:translateX(4px); box-shadow:0 4px 20px rgba(200,169,110,.12); }
+    .contact-service-btn.active { background:var(--beige); }
+    .contact-service-icon { font-size:1.3rem; flex-shrink:0; }
+    .contact-service-label { font-size:.68rem; letter-spacing:.1em; color:var(--light); margin-bottom:.2rem; }
+    .contact-service-name { font-family:'Shippori Mincho B1',serif; font-size:.95rem; color:var(--text); }
+
+    /* FORM */
+    .contact-form-box { background:var(--white); border:1px solid var(--line); padding:clamp(2rem,3vw,3rem); position:relative; }
+    .contact-form-box::after { content:''; position:absolute; bottom:0; left:0; right:0; height:2px; background:linear-gradient(90deg,var(--gold-pale),var(--gold),var(--gold-pale)); }
+    .contact-selected-label { font-family:'Cormorant Garamond',serif; font-size:.72rem; letter-spacing:.3em; text-transform:uppercase; color:var(--gold); margin-bottom:2rem; display:block; min-height:1.2em; }
+    .form-group { margin-bottom:1.8rem; }
+    .form-label { font-size:.7rem; letter-spacing:.15em; color:var(--light); display:block; margin-bottom:.6rem; }
+    .form-label span { color:var(--gold); margin-left:.3rem; }
+    .form-input, .form-textarea {
+      width:100%; background:var(--off); border:none; border-bottom:1px solid var(--line);
+      padding:.8rem 0; font-family:'Noto Sans JP',sans-serif; font-size:.87rem;
+      color:var(--text); font-weight:300; outline:none;
+      transition:border-color .3s; letter-spacing:.04em;
+    }
+    .form-input:focus, .form-textarea:focus { border-bottom-color:var(--gold); background:var(--beige); padding-left:.5rem; }
+    .form-textarea { resize:vertical; min-height:120px; line-height:1.8; padding:.8rem .5rem; }
+    .form-row { display:grid; grid-template-columns:1fr 1fr; gap:1.5rem; }
+    .form-submit {
+      display:inline-flex; align-items:center; gap:1rem;
+      background:var(--text); color:var(--white);
+      font-size:.76rem; letter-spacing:.2em; text-transform:uppercase;
+      padding:1rem 2.5rem; border:none; cursor:pointer;
+      transition:background .3s, gap .3s; margin-top:.5rem; width:100%; justify-content:center;
+    }
+    .form-submit:hover { background:var(--gold); gap:1.5rem; }
+    .form-thanks { display:none; text-align:center; padding:3rem 2rem; }
+    .form-thanks-icon { font-size:2.5rem; margin-bottom:1rem; display:block; }
+    .form-thanks-title { font-family:'Shippori Mincho B1',serif; font-size:1.3rem; color:var(--text); margin-bottom:.8rem; }
+    .form-thanks-desc { font-size:.82rem; color:var(--mid); line-height:2; }
 
     /* FOOTER */
     footer { background:var(--text); padding:clamp(2rem,4vw,3rem) 8vw; display:flex; justify-content:space-between; align-items:center; }
@@ -158,7 +191,7 @@
       header { padding:0 5vw; }
       nav { gap:1.5rem; }
       nav a:not(.nav-contact) { display:none; }
-      .concept-inner,.company-inner { grid-template-columns:1fr; gap:3rem; }
+      .concept-inner,.company-inner,.contact-layout { grid-template-columns:1fr; gap:3rem; }
       .service-row { grid-template-columns:48px 1fr; }
       .service-desc { grid-column:2; }
       #harmonize-banner { flex-direction:column; align-items:flex-start; }
@@ -328,15 +361,53 @@
 <!-- CONTACT -->
 <section id="contact">
   <div class="section-wrap">
-    <div class="contact-inner">
-      <div class="section-header reveal" style="text-align:left">
-        <span class="section-en">Contact</span>
-        <h2 class="section-ja">お問い合わせ</h2>
-        <span class="section-rule"></span>
+    <div class="reveal">
+      <span class="section-en">Contact</span>
+      <h2 class="section-ja">お問い合わせ</h2>
+      <span class="section-rule"></span>
+    </div>
+    <div class="contact-layout">
+      <div class="reveal reveal-d1">
+        <p class="contact-desc">サービスに関するご質問・ご相談・お見積もりは、お気軽にどうぞ。通常2営業日以内にご返信いたします。</p>
       </div>
-      <p class="contact-desc reveal">サービスに関するご質問・ご相談・お見積もりは、<br>下記フォームよりお気軽にどうぞ。<br>通常2営業日以内にご返信いたします。</p>
-      <div class="contact-form-box reveal reveal-d1">
-        <iframe src="https://docs.google.com/forms/d/e/1FAIpQLScnPbTMdWRoEy7ZapC6nTI41JahhG8m3wSZDWIBeX4wt7gSwQ/viewform?embedded=true" width="100%" height="900" frameborder="0" marginheight="0" marginwidth="0" style="border:none;">読み込んでいます…</iframe>
+      <div class="reveal reveal-d2">
+        <div class="contact-form-box">
+          <!-- フォーム本体 -->
+          <form id="contact-form" onsubmit="submitForm(event)">
+            <div class="form-row">
+              <div class="form-group">
+                <label class="form-label">お名前<span>*</span></label>
+                <input class="form-input" type="text" id="f-name" required placeholder="山田 太郎">
+              </div>
+              <div class="form-group">
+                <label class="form-label">会社名</label>
+                <input class="form-input" type="text" id="f-company" placeholder="株式会社〇〇">
+              </div>
+            </div>
+            <div class="form-row">
+              <div class="form-group">
+                <label class="form-label">メールアドレス<span>*</span></label>
+                <input class="form-input" type="email" id="f-email" required placeholder="info@example.com">
+              </div>
+              <div class="form-group">
+                <label class="form-label">電話番号</label>
+                <input class="form-input" type="tel" id="f-tel" placeholder="090-0000-0000">
+              </div>
+            </div>
+            <div class="form-group">
+              <label class="form-label">お問い合わせ内容<span>*</span></label>
+              <textarea class="form-textarea" id="f-message" required placeholder="ご質問・ご相談内容をご記入ください"></textarea>
+            </div>
+            <button type="submit" class="form-submit">送信する →</button>
+          </form>
+
+          <!-- 送信後サンクス -->
+          <div class="form-thanks" id="form-thanks">
+            <span class="form-thanks-icon">✉️</span>
+            <p class="form-thanks-title">お問い合わせありがとうございます</p>
+            <p class="form-thanks-desc">内容を確認の上、2営業日以内にご返信いたします。</p>
+          </div>
+        </div>
       </div>
     </div>
   </div>
@@ -354,6 +425,45 @@
     entries.forEach(e => { if(e.isIntersecting){ e.target.classList.add('visible'); observer.unobserve(e.target); } });
   }, {threshold:.1});
   document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+  // サービス選択
+  function selectService(btn, label) {
+    document.querySelectorAll('.contact-service-btn').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    document.getElementById('selected-label').textContent = '— ' + label + ' —';
+    const msg = document.getElementById('f-message');
+    if (!msg.value) msg.value = label + '\n\n';
+  }
+
+  // フォーム送信（Google Formsバックエンド）
+  function submitForm(e) {
+    e.preventDefault();
+    const name    = document.getElementById('f-name').value;
+    const company = document.getElementById('f-company').value;
+    const email   = document.getElementById('f-email').value;
+    const tel     = document.getElementById('f-tel').value;
+    const message = document.getElementById('f-message').value;
+
+    // Google Forms に hidden iframe 経由で送信
+    const formId = '1FAIpQLScnPbTMdWRoEy7ZapC6nTI41JahhG8m3wSZDWIBeX4wt7gSwQ';
+    const url = 'https://docs.google.com/forms/d/e/' + formId + '/formResponse';
+
+    // ※ entry.XXXXXXX は実際のフォームのフィールドIDに要変更
+    // Claude Code で「GoogleフォームのエントリーIDを調べてinputのnameに設定して」と依頼してください
+    const params = new URLSearchParams({
+      'entry.placeholder_name':    name,
+      'entry.placeholder_company': company,
+      'entry.placeholder_email':   email,
+      'entry.placeholder_tel':     tel,
+      'entry.placeholder_message': message,
+    });
+
+    fetch(url, { method:'POST', mode:'no-cors', body: params });
+
+    // サンクス表示
+    document.getElementById('contact-form').style.display = 'none';
+    document.getElementById('form-thanks').style.display  = 'block';
+  }
 </script>
 </body>
 </html>
