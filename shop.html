@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>製品一覧 | 福福株式会社</title>
+  <meta name="description" content="福福株式会社の製品一覧。生体共鳴転写技術を活用したリカバリーウエアなど、心と身体を整える製品をご紹介します。">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Shippori+Mincho+B1:wght@400;500;600&family=Noto+Sans+JP:wght@300;400&family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --white:#FFFFFF; --off:#F9F7F4; --beige:#F2EDE6;
+      --line:rgba(0,0,0,.08); --text:#1E1C1A; --mid:#6B6560;
+      --light:#ADA8A2; --gold:#C8A96E; --gold-pale:#E8D9BC;
+    }
+    *,*::before,*::after{margin:0;padding:0;box-sizing:border-box;}
+    html{scroll-behavior:smooth;}
+    body{font-family:'Noto Sans JP',sans-serif;background:var(--white);color:var(--text);font-weight:300;overflow-x:hidden;}
+
+    /* HEADER */
+    header{position:fixed;top:0;left:0;right:0;z-index:200;height:72px;display:flex;align-items:center;justify-content:space-between;padding:0 4vw;background:rgba(255,255,255,.95);backdrop-filter:blur(16px);border-bottom:1px solid var(--line);}
+    .header-logo{font-family:'Shippori Mincho B1',serif;font-size:1.05rem;font-weight:600;color:var(--text);text-decoration:none;letter-spacing:.08em;}
+    .header-nav{display:flex;align-items:center;gap:2rem;}
+    .header-nav a{font-size:.72rem;letter-spacing:.14em;color:var(--mid);text-decoration:none;transition:color .3s;}
+    .header-nav a:hover{color:var(--text);}
+    .header-back{font-size:.7rem;letter-spacing:.14em;color:var(--mid);text-decoration:none;display:flex;align-items:center;gap:.6rem;transition:color .3s;border:1px solid var(--line);padding:.4rem 1rem;}
+    .header-back:hover{color:var(--text);border-color:var(--text);}
+
+    /* PAGE HERO */
+    #page-hero{padding-top:72px;background:var(--off);min-height:36vh;display:flex;align-items:flex-end;position:relative;overflow:hidden;}
+    #page-hero::before{content:'SHOP';position:absolute;right:-1vw;top:50%;transform:translateY(-50%);font-family:'Cormorant Garamond',serif;font-size:clamp(8rem,18vw,18rem);font-weight:300;color:rgba(0,0,0,.04);letter-spacing:-.02em;pointer-events:none;line-height:1;}
+    .page-hero-content{position:relative;z-index:1;padding:0 8vw 6vh;width:100%;}
+    .page-hero-en{font-family:'Cormorant Garamond',serif;font-size:.72rem;font-weight:300;letter-spacing:.38em;color:var(--gold);text-transform:uppercase;display:block;margin-bottom:1rem;}
+    .page-hero-title{font-family:'Shippori Mincho B1',serif;font-size:clamp(2rem,4vw,3rem);font-weight:400;color:var(--text);line-height:1.4;letter-spacing:.04em;margin-bottom:.6rem;}
+    .page-hero-sub{font-size:.82rem;color:var(--light);letter-spacing:.1em;}
+
+    /* SECTION */
+    .section-wrap{padding:clamp(60px,8vw,100px) 8vw;}
+
+    /* PRODUCTS GRID */
+    .products-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(320px,1fr));gap:2px;}
+
+    /* PRODUCT CARD */
+    .product-card{background:var(--off);display:flex;flex-direction:column;transition:transform .3s;}
+    .product-card:hover{transform:translateY(-4px);}
+    .product-card:hover .product-img-inner{transform:scale(1.03);}
+
+    .product-img{aspect-ratio:4/3;overflow:hidden;background:var(--beige);position:relative;}
+    .product-img-inner{width:100%;height:100%;display:flex;align-items:center;justify-content:center;transition:transform .5s cubic-bezier(.22,1,.36,1);}
+    .product-img-placeholder{text-align:center;color:var(--light);}
+    .product-img-placeholder-icon{font-size:3rem;opacity:.4;display:block;margin-bottom:.8rem;}
+    .product-img-placeholder-text{font-size:.68rem;letter-spacing:.2em;opacity:.5;}
+    .product-tag{position:absolute;top:1rem;left:1rem;background:var(--text);color:var(--white);font-size:.62rem;letter-spacing:.18em;padding:.3rem .8rem;text-transform:uppercase;}
+    .product-tag.new{background:var(--gold);}
+
+    .product-body{padding:2rem;flex:1;display:flex;flex-direction:column;gap:1rem;background:var(--white);}
+    .product-en{font-family:'Cormorant Garamond',serif;font-size:.68rem;letter-spacing:.25em;color:var(--light);text-transform:uppercase;}
+    .product-name{font-family:'Shippori Mincho B1',serif;font-size:1.2rem;color:var(--text);line-height:1.5;letter-spacing:.04em;}
+    .product-desc{font-size:.82rem;line-height:2;color:var(--mid);flex:1;}
+    .product-features{display:flex;flex-wrap:wrap;gap:.4rem;margin-top:.3rem;}
+    .product-feature{font-size:.65rem;letter-spacing:.08em;color:var(--gold);border:1px solid var(--gold-pale);padding:.2rem .7rem;}
+    .product-footer{display:flex;align-items:center;justify-content:space-between;padding-top:1rem;border-top:1px solid var(--line);margin-top:auto;}
+    .product-price{font-family:'Cormorant Garamond',serif;font-size:1.4rem;font-weight:300;color:var(--text);letter-spacing:.04em;}
+    .product-price span{font-size:.72rem;font-family:'Noto Sans JP',sans-serif;color:var(--light);margin-left:.3rem;font-weight:300;}
+    .product-btn{display:inline-flex;align-items:center;gap:.6rem;background:var(--text);color:var(--white);font-size:.7rem;letter-spacing:.15em;padding:.7rem 1.4rem;text-decoration:none;transition:background .3s,gap .3s;}
+    .product-btn:hover{background:var(--gold);gap:1rem;}
+    .product-btn.coming{background:var(--line);color:var(--light);pointer-events:none;}
+
+    /* COMING SOON CARD */
+    .product-card.coming-soon .product-img{opacity:.5;}
+    .product-card.coming-soon .product-body{opacity:.6;}
+
+    /* NOTE */
+    .shop-note{background:var(--off);padding:clamp(2rem,4vw,3rem) 8vw;border-top:1px solid var(--line);}
+    .shop-note-inner{max-width:640px;display:flex;gap:1.5rem;align-items:flex-start;}
+    .shop-note-icon{font-size:1.2rem;flex-shrink:0;margin-top:.1rem;opacity:.5;}
+    .shop-note-text{font-size:.78rem;line-height:2;color:var(--mid);}
+    .shop-note-text a{color:var(--gold);text-decoration:none;border-bottom:1px solid var(--gold-pale);}
+    .shop-note-text a:hover{border-color:var(--gold);}
+
+    /* FOOTER */
+    footer{background:var(--text);padding:clamp(2rem,4vw,3rem) 8vw;display:flex;justify-content:space-between;align-items:center;}
+    .footer-logo{font-family:'Shippori Mincho B1',serif;font-size:.95rem;color:rgba(255,255,255,.7);letter-spacing:.08em;}
+    .footer-copy{font-family:'Cormorant Garamond',serif;font-size:.72rem;letter-spacing:.12em;color:rgba(255,255,255,.25);}
+
+    /* REVEAL */
+    .reveal{opacity:0;transform:translateY(20px);transition:opacity .7s cubic-bezier(.22,1,.36,1),transform .7s cubic-bezier(.22,1,.36,1);}
+    .reveal.visible{opacity:1;transform:translateY(0);}
+    .reveal-d1{transition-delay:.1s;} .reveal-d2{transition-delay:.2s;}
+
+    @media(max-width:600px){
+      .products-grid{grid-template-columns:1fr;}
+      .header-nav{display:none;}
+      footer{flex-direction:column;gap:1rem;text-align:center;}
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <a href="index.html" class="header-logo">福福株式会社</a>
+  <div class="header-nav">
+    <a href="index.html#concept">理念</a>
+    <a href="index.html#services">事業内容</a>
+    <a href="harmonize.html">技術</a>
+    <a href="index.html#contact">お問い合わせ</a>
+  </div>
+  <a href="index.html" class="header-back">← トップへ</a>
+</header>
+
+<!-- PAGE HERO -->
+<section id="page-hero">
+  <div class="page-hero-content">
+    <span class="page-hero-en">Products</span>
+    <h1 class="page-hero-title">製品一覧</h1>
+    <p class="page-hero-sub">生体共鳴転写技術を活用した、心と身体を整える製品</p>
+  </div>
+</section>
+
+<!-- PRODUCTS -->
+<section>
+  <div class="section-wrap">
+    <div class="products-grid">
+
+      <!-- リカバリーウエア -->
+      <div class="product-card reveal">
+        <div class="product-img">
+          <div class="product-img-inner">
+            <div class="product-img-placeholder">
+              <!-- 商品画像が決まったら <img src="recovery-wear.jpg" alt="リカバリーウエア"> に差し替え -->
+              <span class="product-img-placeholder-icon">👕</span>
+              <p class="product-img-placeholder-text">Image coming soon</p>
+            </div>
+          </div>
+          <span class="product-tag new">New</span>
+        </div>
+        <div class="product-body">
+          <span class="product-en">Recovery Wear</span>
+          <h2 class="product-name">リカバリーウエア</h2>
+          <p class="product-desc">生地そのものに生体共鳴波長を転写加工したウエアです。着用中、体の表面から継続的に共鳴波が働きかけることで、日常の疲労回復・体のバランス維持をサポートします。</p>
+          <div class="product-features">
+            <span class="product-feature">生体共鳴転写</span>
+            <span class="product-feature">疲労回復サポート</span>
+            <span class="product-feature">日常着用</span>
+          </div>
+          <div class="product-footer">
+            <p class="product-price">¥●,●●●<span>税込</span></p>
+            <!-- SquareオンラインストアのURLが決まったら href に設定 -->
+            <a href="#" class="product-btn" target="_blank" rel="noopener">
+              購入する →
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Coming Soon -->
+      <div class="product-card coming-soon reveal reveal-d1">
+        <div class="product-img">
+          <div class="product-img-inner">
+            <div class="product-img-placeholder">
+              <span class="product-img-placeholder-icon">✦</span>
+              <p class="product-img-placeholder-text">Coming soon</p>
+            </div>
+          </div>
+          <span class="product-tag">Coming Soon</span>
+        </div>
+        <div class="product-body">
+          <span class="product-en">New Product</span>
+          <h2 class="product-name">近日公開予定</h2>
+          <p class="product-desc">新製品を準備中です。詳細が決まり次第、こちらでご案内いたします。お問い合わせページよりご連絡いただくことも可能です。</p>
+          <div class="product-footer">
+            <p class="product-price" style="color:var(--light);">準備中</p>
+            <a href="index.html#contact" class="product-btn coming">お知らせを待つ</a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- NOTE -->
+<div class="shop-note">
+  <div class="shop-note-inner">
+    <span class="shop-note-icon">📦</span>
+    <p class="shop-note-text">
+      ご購入はSquareオンラインストアにて承っております。<br>
+      ご不明な点は<a href="index.html#contact">お問い合わせフォーム</a>よりお気軽にご連絡ください。<br>
+      ※ 価格・在庫状況は予告なく変更される場合があります。
+    </p>
+  </div>
+</div>
+
+<footer>
+  <p class="footer-logo">福福株式会社</p>
+  <p class="footer-copy">© 2026 Fukufuku Co., Ltd. All rights reserved.</p>
+</footer>
+
+<script>
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(e => { if(e.isIntersecting){ e.target.classList.add('visible'); observer.unobserve(e.target); } });
+  }, {threshold:.08});
+  document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+</script>
+</body>
+</html>
