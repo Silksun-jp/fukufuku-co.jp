@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ハーモナイズ技術とは | 福福株式会社</title>
+  <meta name="description" content="生体共鳴転写技術（ハーモナイズ技術）について。7段階のプラズマ構造を基盤に、情報と波動に働きかける福福株式会社の技術体系をご紹介します。">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Shippori+Mincho+B1:wght@400;500;600&family=Noto+Sans+JP:wght@300;400&family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --white:#FFFFFF; --off:#F9F7F4; --beige:#F2EDE6;
+      --line:rgba(0,0,0,.08); --text:#1E1C1A; --mid:#6B6560;
+      --light:#ADA8A2; --gold:#C8A96E; --gold-pale:#E8D9BC;
+    }
+    *,*::before,*::after{margin:0;padding:0;box-sizing:border-box;}
+    html{scroll-behavior:smooth;}
+    body{font-family:'Noto Sans JP',sans-serif;background:var(--white);color:var(--text);font-weight:300;overflow-x:hidden;}
+
+    /* HEADER */
+    header{position:fixed;top:0;left:0;right:0;z-index:200;height:72px;display:flex;align-items:center;justify-content:space-between;padding:0 4vw;background:rgba(255,255,255,.95);backdrop-filter:blur(16px);border-bottom:1px solid var(--line);}
+    .header-logo{font-family:'Shippori Mincho B1',serif;font-size:1.05rem;font-weight:600;color:var(--text);text-decoration:none;letter-spacing:.08em;}
+    .header-back{font-size:.72rem;letter-spacing:.14em;color:var(--mid);text-decoration:none;display:flex;align-items:center;gap:.6rem;transition:color .3s;}
+    .header-back:hover{color:var(--gold);}
+
+    /* PAGE HERO */
+    #page-hero{padding-top:72px;background:var(--text);min-height:50vh;display:flex;align-items:flex-end;position:relative;overflow:hidden;}
+    #page-hero::before{content:'HARMONIZE';position:absolute;right:-2vw;top:50%;transform:translateY(-50%);font-family:'Cormorant Garamond',serif;font-size:clamp(6rem,14vw,14rem);font-weight:300;color:rgba(255,255,255,.03);letter-spacing:-.02em;pointer-events:none;line-height:1;}
+    .page-hero-content{position:relative;z-index:1;padding:0 8vw 8vh;width:100%;}
+    .page-hero-en{font-family:'Cormorant Garamond',serif;font-size:.72rem;font-weight:300;letter-spacing:.38em;color:var(--gold);text-transform:uppercase;display:block;margin-bottom:1.2rem;}
+    .page-hero-title{font-family:'Shippori Mincho B1',serif;font-size:clamp(2rem,4vw,3.5rem);font-weight:400;color:var(--white);line-height:1.4;letter-spacing:.04em;margin-bottom:.8rem;}
+    .page-hero-sub{font-size:.82rem;color:rgba(255,255,255,.45);letter-spacing:.15em;}
+
+    /* SECTION */
+    .section-wrap{padding:clamp(80px,10vw,120px) 8vw;}
+    .section-en{font-family:'Cormorant Garamond',serif;font-size:.72rem;font-weight:300;letter-spacing:.38em;color:var(--gold);text-transform:uppercase;display:block;margin-bottom:1rem;}
+    .section-ja{font-family:'Shippori Mincho B1',serif;font-size:clamp(1.5rem,2.5vw,2.2rem);font-weight:400;color:var(--text);line-height:1.5;letter-spacing:.04em;}
+    .section-rule{display:block;width:32px;height:1px;background:var(--gold);margin-top:1.8rem;margin-bottom:3rem;}
+
+    /* WHAT IS */
+    #what{background:var(--off);}
+    .what-inner{display:grid;grid-template-columns:1fr 1fr;gap:8vw;align-items:start;}
+    .what-lead{font-family:'Shippori Mincho B1',serif;font-size:clamp(1.2rem,2vw,1.7rem);font-weight:400;line-height:2;letter-spacing:.05em;color:var(--text);margin-bottom:2rem;}
+    .what-lead em{font-style:normal;color:var(--gold);}
+    .what-body{font-size:.87rem;line-height:2.4;color:var(--mid);}
+    .what-body p+p{margin-top:1.2em;}
+    .what-example{background:var(--white);padding:2rem;margin-top:2rem;}
+    .what-example-label{font-family:'Cormorant Garamond',serif;font-size:.68rem;letter-spacing:.3em;color:var(--gold);text-transform:uppercase;margin-bottom:1rem;display:block;}
+    .what-example-item{display:flex;align-items:flex-start;gap:1rem;margin-bottom:.8rem;}
+    .what-example-item:last-child{margin-bottom:0;}
+    .what-example-icon{color:var(--gold);flex-shrink:0;margin-top:.1rem;}
+    .what-example-text{font-size:.83rem;line-height:1.8;color:var(--mid);}
+
+    /* PLASMA */
+    #plasma{background:var(--text);}
+    .plasma-header .section-en{color:var(--gold);}
+    .plasma-header .section-ja{color:var(--white);}
+    .plasma-header .section-rule{background:var(--gold);}
+    .plasma-intro{font-size:.87rem;line-height:2.3;color:rgba(255,255,255,.55);max-width:640px;margin-bottom:clamp(3rem,5vw,5rem);}
+    .plasma-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:1.5px;background:rgba(255,255,255,.06);}
+    .plasma-card{background:var(--text);padding:2.5rem 2rem;border:1px solid rgba(255,255,255,.06);transition:background .3s;}
+    .plasma-card:hover{background:rgba(255,255,255,.04);}
+    .plasma-card-num{font-family:'Cormorant Garamond',serif;font-size:3rem;font-weight:300;color:rgba(200,169,110,.2);line-height:1;margin-bottom:1.2rem;}
+    .plasma-card-title{font-family:'Shippori Mincho B1',serif;font-size:1rem;color:var(--white);margin-bottom:.8rem;line-height:1.5;}
+    .plasma-card-sub{font-size:.78rem;color:rgba(255,255,255,.35);line-height:1.8;letter-spacing:.04em;}
+    .plasma-current{margin-top:clamp(3rem,5vw,5rem);padding:2.5rem;border:1px solid rgba(200,169,110,.25);background:rgba(200,169,110,.05);}
+    .plasma-current-label{font-family:'Cormorant Garamond',serif;font-size:.68rem;letter-spacing:.3em;color:var(--gold);text-transform:uppercase;margin-bottom:1rem;display:block;}
+    .plasma-current-text{font-family:'Shippori Mincho B1',serif;font-size:clamp(1rem,1.6vw,1.3rem);color:var(--white);line-height:1.8;letter-spacing:.04em;margin-bottom:1rem;}
+    .plasma-current-desc{font-size:.85rem;line-height:2.2;color:rgba(255,255,255,.5);}
+
+    /* EFFECTS */
+    #effects{background:var(--off);}
+    .effects-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:1.5rem;}
+    .effect-card{background:var(--white);padding:2rem;border-left:2px solid var(--gold-pale);transition:border-color .3s,transform .3s;}
+    .effect-card:hover{border-color:var(--gold);transform:translateY(-3px);}
+    .effect-card-text{font-family:'Shippori Mincho B1',serif;font-size:.97rem;color:var(--text);line-height:1.7;letter-spacing:.03em;}
+
+    /* FUTURE */
+    #future{background:var(--white);text-align:center;}
+    .future-inner{max-width:680px;margin:0 auto;}
+    .future-lead{font-family:'Shippori Mincho B1',serif;font-size:clamp(1.4rem,2.5vw,2rem);font-weight:400;line-height:1.9;letter-spacing:.05em;color:var(--text);margin-bottom:2rem;}
+    .future-lead em{font-style:normal;color:var(--gold);}
+    .future-body{font-size:.87rem;line-height:2.4;color:var(--mid);}
+    .future-body p+p{margin-top:1.2em;}
+
+    /* BACK BTN */
+    .back-section{padding:clamp(3rem,6vw,6rem) 8vw;background:var(--off);display:flex;justify-content:center;}
+    .back-btn{display:inline-flex;align-items:center;gap:1rem;font-size:.76rem;letter-spacing:.18em;text-transform:uppercase;color:var(--mid);text-decoration:none;border-bottom:1px solid var(--line);padding-bottom:.4rem;transition:gap .3s,color .3s,border-color .3s;}
+    .back-btn:hover{gap:1.6rem;color:var(--text);border-color:var(--text);}
+
+    /* FOOTER */
+    footer{background:var(--text);padding:clamp(2rem,4vw,3rem) 8vw;display:flex;justify-content:space-between;align-items:center;}
+    .footer-logo{font-family:'Shippori Mincho B1',serif;font-size:.95rem;color:rgba(255,255,255,.7);letter-spacing:.08em;}
+    .footer-copy{font-family:'Cormorant Garamond',serif;font-size:.72rem;letter-spacing:.12em;color:rgba(255,255,255,.25);}
+
+    /* REVEAL */
+    .reveal{opacity:0;transform:translateY(28px);transition:opacity .8s cubic-bezier(.22,1,.36,1),transform .8s cubic-bezier(.22,1,.36,1);}
+    .reveal.visible{opacity:1;transform:translateY(0);}
+    .reveal-d1{transition-delay:.1s;} .reveal-d2{transition-delay:.2s;} .reveal-d3{transition-delay:.3s;}
+
+    @media(max-width:768px){
+      .what-inner{grid-template-columns:1fr;}
+      .plasma-grid{grid-template-columns:1fr;}
+      footer{flex-direction:column;gap:1rem;text-align:center;}
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <a href="index.html" class="header-logo">福福株式会社</a>
+  <a href="index.html" class="header-back">← トップへ戻る</a>
+</header>
+
+<!-- PAGE HERO -->
+<section id="page-hero">
+  <div class="page-hero-content">
+    <span class="page-hero-en">Technology</span>
+    <h1 class="page-hero-title">ハーモナイズ技術とは</h1>
+    <p class="page-hero-sub">生体共鳴転写技術 — Bioharmonic Transfer Technology</p>
+  </div>
+</section>
+
+<!-- WHAT IS -->
+<section id="what">
+  <div class="section-wrap">
+    <div class="reveal">
+      <span class="section-en">What is Harmonize</span>
+      <h2 class="section-ja">生体共鳴転写技術</h2>
+      <span class="section-rule"></span>
+    </div>
+    <div class="what-inner">
+      <div class="reveal reveal-d1">
+        <p class="what-lead">「情報」と「波動」に<br>働きかける、<br><em>次世代の技術</em>。</p>
+        <div class="what-example">
+          <span class="what-example-label">身近な例で理解する</span>
+          <div class="what-example-item">
+            <span class="what-example-icon">🎸</span>
+            <p class="what-example-text">ギターの弦を一本弾くと、同じ音程の弦が自然に振動する。これが「共鳴」です。</p>
+          </div>
+          <div class="what-example-item">
+            <span class="what-example-icon">🏥</span>
+            <p class="what-example-text">医療現場のMRI（核磁気共鳴）も、体の状態を波長で読み取る共鳴技術です。</p>
+          </div>
+          <div class="what-example-item">
+            <span class="what-example-icon">✨</span>
+            <p class="what-example-text">本技術では、特定の波長を転写したシール・ウエアが、体や空間の乱れた周波数を整えるよう「共鳴」して働きかけます。</p>
+          </div>
+        </div>
+      </div>
+      <div class="reveal reveal-d2">
+        <div class="what-body">
+          <p>生体（人の体や生命体）が持つ固有の振動・周波数に、外部から特定の波長を共鳴させることで、体や生活環境のバランスを整える技術です。</p>
+          <p>「転写」とは、この有益な波長を物質（シール・ウエア）に定着させる加工プロセスを指します。一度転写された物質は、継続的に共鳴波を放出し続けます。</p>
+          <p>私たちの技術は、物質そのものではなく「情報」と「波動」に働きかけます。「共鳴」は物理学・音響学・医療工学で広く使われる確立した概念であり、本技術もその原理を応用しています。</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PLASMA -->
+<section id="plasma">
+  <div class="section-wrap">
+    <div class="plasma-header reveal">
+      <span class="section-en">Plasma Structure</span>
+      <h2 class="section-ja">7段階のプラズマ</h2>
+      <span class="section-rule"></span>
+    </div>
+    <p class="plasma-intro reveal">私たちは、「7段階のプラズマ」という宇宙的なエネルギー構造を基盤に、目に見えない領域から世界を癒す技術を探求しています。プラズマとは単なる物理現象ではなく、"存在の状態そのもの"です。</p>
+    <div class="plasma-grid">
+      <div class="plasma-card reveal">
+        <div class="plasma-card-num">01</div>
+        <h3 class="plasma-card-title">存在の分離状態に生じるプラズマ</h3>
+        <p class="plasma-card-sub">酸素と水素が結びつく前のエネルギー</p>
+      </div>
+      <div class="plasma-card reveal reveal-d1">
+        <div class="plasma-card-num">02</div>
+        <h3 class="plasma-card-title">共振が生み出すプラズマ</h3>
+        <p class="plasma-card-sub">音・振動・調和</p>
+      </div>
+      <div class="plasma-card reveal reveal-d1">
+        <div class="plasma-card-num">03</div>
+        <h3 class="plasma-card-title">磁気によるプラズマ</h3>
+        <p class="plasma-card-sub">0磁場・反発・引力</p>
+      </div>
+      <div class="plasma-card reveal reveal-d2">
+        <div class="plasma-card-num">04</div>
+        <h3 class="plasma-card-title">圧力によるプラズマ</h3>
+        <p class="plasma-card-sub">極限環境・物質変換</p>
+      </div>
+      <div class="plasma-card reveal reveal-d2">
+        <div class="plasma-card-num">05</div>
+        <h3 class="plasma-card-title">光によるプラズマ</h3>
+        <p class="plasma-card-sub">フォトン・情報伝達</p>
+      </div>
+      <div class="plasma-card reveal reveal-d3" style="border:1px solid rgba(200,169,110,.25);background:rgba(200,169,110,.05);">
+        <div class="plasma-card-num" style="color:rgba(200,169,110,.5);">06</div>
+        <h3 class="plasma-card-title" style="color:var(--gold);">情報によるプラズマ ◀ 現在地</h3>
+        <p class="plasma-card-sub" style="color:rgba(200,169,110,.6);">意識・波動・量子共鳴</p>
+      </div>
+      <div class="plasma-card reveal reveal-d3">
+        <div class="plasma-card-num">07</div>
+        <h3 class="plasma-card-title">根源的エネルギーによるプラズマ</h3>
+        <p class="plasma-card-sub">創造の源・宇宙意識</p>
+      </div>
+    </div>
+    <div class="plasma-current reveal">
+      <span class="plasma-current-label">Current Stage — 現在の技術段階</span>
+      <p class="plasma-current-text">私たちの技術は現在、第6段階「情報プラズマ」の領域にあります。</p>
+      <p class="plasma-current-desc">この領域では、すべての存在が"情報としてつながっている"ことを前提に、量子的な共鳴（量子もつれ）を通じて現実に働きかけることが可能になります。</p>
+    </div>
+  </div>
+</section>
+
+<!-- EFFECTS -->
+<section id="effects">
+  <div class="section-wrap">
+    <div class="reveal">
+      <span class="section-en">Effects</span>
+      <h2 class="section-ja">技術がもたらす変化</h2>
+      <span class="section-rule"></span>
+    </div>
+    <div class="effects-grid">
+      <div class="effect-card reveal"><p class="effect-card-text">乱れた電磁波のエネルギーが整う</p></div>
+      <div class="effect-card reveal reveal-d1"><p class="effect-card-text">有害な影響を持つ情報が中和される</p></div>
+      <div class="effect-card reveal reveal-d1"><p class="effect-card-text">環境中のエネルギーバランスが調整される</p></div>
+      <div class="effect-card reveal reveal-d2"><p class="effect-card-text">細胞レベルの生命活動が活性化する</p></div>
+      <div class="effect-card reveal reveal-d2"><p class="effect-card-text">熱や電気の流れがスムーズになる</p></div>
+      <div class="effect-card reveal reveal-d3"><p class="effect-card-text">摩擦や抵抗といったロスが軽減される</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- FUTURE -->
+<section id="future">
+  <div class="section-wrap">
+    <div class="future-inner">
+      <div class="reveal">
+        <span class="section-en">Future Vision</span>
+        <h2 class="section-ja">私たちが目指す未来</h2>
+        <span class="section-rule"></span>
+      </div>
+      <div class="reveal reveal-d1">
+        <p class="future-lead">争いも、病も、老いも、<br>すべては<em>「不調和」</em>から生まれます。</p>
+        <div class="future-body">
+          <p>もし世界が本来の調和を取り戻したとしたら——人はもっと自由に、軽やかに、そして本来の力を発揮して生きられるはずです。</p>
+          <p>福福株式会社は、見えない領域から世界を整え、次の時代の"当たり前"を創っていきます。</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="back-section">
+  <a href="index.html" class="back-btn">← トップページへ戻る</a>
+</div>
+
+<footer>
+  <p class="footer-logo">福福株式会社</p>
+  <p class="footer-copy">© 2026 Fukufuku Co., Ltd. All rights reserved.</p>
+</footer>
+
+<script>
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(e => { if(e.isIntersecting){ e.target.classList.add('visible'); observer.unobserve(e.target); } });
+  }, {threshold:.1});
+  document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+</script>
+</body>
+</html>
