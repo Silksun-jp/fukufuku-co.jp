@@ -47,7 +47,23 @@
     header.scrolled .nav-contact { color:var(--text)!important; border-color:var(--text); }
     header.scrolled .nav-contact:hover { background:var(--text); color:var(--white)!important; }
 
-    /* HERO */
+    /* HAMBURGER */
+    .hamburger { display:none; flex-direction:column; gap:5px; cursor:pointer; padding:.5rem; background:none; border:none; z-index:300; }
+    .hamburger span { display:block; width:22px; height:1px; background:var(--white); transition:background .4s, transform .3s, opacity .3s; }
+    header.scrolled .hamburger span { background:var(--text); }
+    .hamburger.open span:nth-child(1) { transform:translateY(6px) rotate(45deg); }
+    .hamburger.open span:nth-child(2) { opacity:0; }
+    .hamburger.open span:nth-child(3) { transform:translateY(-6px) rotate(-45deg); }
+
+    /* MOBILE MENU */
+    .mobile-menu {
+      display:none; position:fixed; inset:0; z-index:250;
+      background:var(--text); flex-direction:column;
+      align-items:center; justify-content:center; gap:2.5rem;
+    }
+    .mobile-menu.open { display:flex; }
+    .mobile-menu a { font-family:'Shippori Mincho B1',serif; font-size:1.4rem; color:var(--white); text-decoration:none; letter-spacing:.1em; }
+    .mobile-menu a:hover { color:var(--gold); }
     #hero { height:100vh; min-height:640px; position:relative; display:flex; align-items:flex-end; overflow:hidden; }
     .hero-bg { position:absolute; inset:0; background:linear-gradient(160deg,#2C3E30 0%,#1A2820 40%,#3D3530 100%); }
     .hero-bg::before { content:''; position:absolute; inset:0; background:radial-gradient(ellipse 80% 60% at 70% 40%,rgba(200,169,110,.18) 0%,transparent 60%),radial-gradient(ellipse 50% 80% at 20% 70%,rgba(76,120,90,.15) 0%,transparent 55%); }
@@ -188,9 +204,8 @@
 
     /* RESPONSIVE */
     @media(max-width:768px){
-      header { padding:0 5vw; }
-      nav { gap:1.5rem; }
-      nav a:not(.nav-contact) { display:none; }
+      nav { display:none; }
+      .hamburger { display:flex; }
       .concept-inner,.company-inner,.contact-layout { grid-template-columns:1fr; gap:3rem; }
       .service-row { grid-template-columns:48px 1fr; }
       .service-desc { grid-column:2; }
@@ -211,7 +226,20 @@
     <a href="#company">会社概要</a>
     <a href="#contact" class="nav-contact">Contact</a>
   </nav>
+  <button class="hamburger" id="hamburger" onclick="toggleMenu()">
+    <span></span><span></span><span></span>
+  </button>
 </header>
+
+<!-- MOBILE MENU -->
+<div class="mobile-menu" id="mobile-menu">
+  <a href="#concept" onclick="closeMenu()">理念</a>
+  <a href="#services" onclick="closeMenu()">事業内容</a>
+  <a href="shop.html" onclick="closeMenu()">製品</a>
+  <a href="harmonize.html" onclick="closeMenu()">技術</a>
+  <a href="#company" onclick="closeMenu()">会社概要</a>
+  <a href="#contact" onclick="closeMenu()">お問い合わせ</a>
+</div>
 
 <!-- HERO -->
 <section id="hero">
@@ -413,6 +441,16 @@
 </footer>
 
 <script>
+  // Hamburger menu
+  function toggleMenu() {
+    document.getElementById('hamburger').classList.toggle('open');
+    document.getElementById('mobile-menu').classList.toggle('open');
+  }
+  function closeMenu() {
+    document.getElementById('hamburger').classList.remove('open');
+    document.getElementById('mobile-menu').classList.remove('open');
+  }
+
   const header = document.getElementById('site-header');
   window.addEventListener('scroll', () => { header.classList.toggle('scrolled', window.scrollY > 60); }, {passive:true});
   const observer = new IntersectionObserver((entries) => {
