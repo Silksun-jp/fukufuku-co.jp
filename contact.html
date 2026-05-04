@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang=\"ja\">
+<head>
+  <meta charset=\"UTF-8\">
+  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">
+  <title>お問い合わせ | 福福株式会社</title>
+  <link rel=\"stylesheet\" href=\"assets/styles.css\">
+</head>
+<body>
+
+<button class=\"menu-toggle\" id=\"menuToggle\" aria-label=\"メニューを開く\">
+  <span></span><span></span><span></span>
+</button>
+<div class=\"mobile-nav\" id=\"mobileNav\">
+  <div class=\"mobile-nav__header\">
+    <span class=\"brand__title\">福福株式会社</span>
+    <button class=\"mobile-nav__close\" id=\"menuClose\">&times;</button>
+  </div>
+  <nav class=\"mobile-nav__links\">
+    <a href=\"index.html\">ホーム</a>
+    <a href=\"philosophy.html\">理念</a>
+    <a href=\"products.html\">製品</a>
+    <a href=\"technology.html\">技術</a>
+    <a href=\"company.html\">会社概要</a>
+    <a class=\"is-current\" href=\"contact.html\">お問い合わせ</a>
+  </nav>
+  <div class=\"mobile-nav__contact\"><a class=\"contact-btn\" href=\"contact.html\">お問い合わせ</a></div>
+</div>
+
+<header class=\"header\">
+  <div class=\"container header__inner\">
+    <a class=\"brand\" href=\"index.html\">
+      <span class=\"logo\"><span class=\"stem\"></span><span class=\"petal\"></span><span class=\"dot\"></span></span>
+      <span class=\"brand__title\">福福株式会社</span>
+    </a>
+    <nav class=\"nav\">
+      <a href=\"index.html\">ホーム</a>
+      <a href=\"philosophy.html\">理念</a>
+      <a href=\"products.html\">製品</a>
+      <a href=\"technology.html\">技術</a>
+      <a href=\"company.html\">会社概要</a>
+    </nav>
+    <a class=\"contact-btn\" href=\"contact.html\">お問い合わせ</a>
+  </div>
+</header>
+
+<main>
+  <section class=\"page-hero\">
+    <div class=\"container\">
+      <div class=\"page-hero__box\">
+        <div class=\"page-hero__inner\">
+          <div class=\"breadcrumb\">ホーム / お問い合わせ</div>
+          <h1>お問い合わせ</h1>
+          <p>製品・技術・導入について，ぜひお気軽にご連絡ください。</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class=\"section\">
+    <div class=\"container section-box\">
+      <span class=\"section-tag\">Contact</span>
+      <h2 class=\"section-title\">お問い合わせフォーム</h2>
+      <p class=\"section-text\">お名前，ご連絡先，お問い合わせ内容を入力してください。送信内容は Google スプレッドシートに保存されます。</p>
+      <p class=\"form-note\" style=\"margin-top:10px; margin-bottom:24px;\">
+        ※ GAS の WebアプリURL を設定すると送信が有効になります。 contact.html 内の CONTACT_ENDPOINT を差し替えてください。
+      </p>
+      <form id=\"contactForm\">
+        <div class=\"form-grid\">
+          <div class=\"form-field\">
+            <label for=\"name\">お名前 <span style=\"color:var(--orange)\">*</span></label>
+            <input id=\"name\" name=\"name\" type=\"text\" placeholder=\"山田 太郎\" required autocomplete=\"name\">
+          </div>
+          <div class=\"form-field\">
+            <label for=\"email\">メールアドレス <span style=\"color:var(--orange)\">*</span></label>
+            <input id=\"email\" name=\"email\" type=\"email\" placeholder=\"example@mail.jp\" required autocomplete=\"email\">
+          </div>
+          <div class=\"form-field\">
+            <label for=\"phone\">電話番号</label>
+            <input id=\"phone\" name=\"phone\" type=\"tel\" placeholder=\"090-0000-0000\" autocomplete=\"tel\">
+          </div>
+          <div class=\"form-field\">
+            <label for=\"topic\">お問い合わせ種別</label>
+            <select id=\"topic\" name=\"topic\">
+              <option value=\"製品について\">製品について</option>
+              <option value=\"導入・取り扱い\">導入・取り扱い</option>
+              <option value=\"技術について\">技術について</option>
+              <option value=\"その他\">その他</option>
+            </select>
+          </div>
+          <div class=\"form-field full\">
+            <label for=\"message\">お問い合わせ内容 <span style=\"color:var(--orange)\">*</span></label>
+            <textarea id=\"message\" name=\"message\" placeholder=\"具体的な内容をお聞かせください。\" required></textarea>
+          </div>
+        </div>
+        <div class=\"form-submit-row\">
+          <button class=\"btn-submit\" type=\"submit\">送信する</button>
+          <span class=\"form-note\">→ Google スプレッドシートに保存</span>
+        </div>
+        <div id=\"formStatus\" class=\"status\" aria-live=\"polite\"></div>
+      </form>
+    </div>
+  </section>
+</main>
+
+<footer class=\"footer\">
+  <div class=\"container footer-inner\">
+    <div>© Fukufuku Co., Ltd.</div>
+    <div>harmonize</div>
+  </div>
+</footer>
+
+<script>window.CONTACT_ENDPOINT = 'YOUR_GAS_WEB_APP_URL';</script>
+<script src=\"assets/contact.js\"></script>
+<script>
+  var toggle = document.getElementById('menuToggle');
+  var nav = document.getElementById('mobileNav');
+  var close = document.getElementById('menuClose');
+  toggle.addEventListener('click', function(){ nav.classList.add('is-open'); });
+  close.addEventListener('click', function(){ nav.classList.remove('is-open'); });
+  nav.querySelectorAll('a').forEach(function(a){ a.addEventListener('click', function(){ nav.classList.remove('is-open'); }); });
+</script>
+</body>
+</html>

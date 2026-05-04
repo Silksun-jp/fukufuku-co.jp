@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang=\"ja\">
+<head>
+  <meta charset=\"UTF-8\">
+  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">
+  <title>会社概要 | 福福株式会社</title>
+  <link rel=\"stylesheet\" href=\"assets/styles.css\">
+</head>
+<body>
+
+<button class=\"menu-toggle\" id=\"menuToggle\" aria-label=\"メニューを開く\">
+  <span></span><span></span><span></span>
+</button>
+<div class=\"mobile-nav\" id=\"mobileNav\">
+  <div class=\"mobile-nav__header\">
+    <span class=\"brand__title\">福福株式会社</span>
+    <button class=\"mobile-nav__close\" id=\"menuClose\">&times;</button>
+  </div>
+  <nav class=\"mobile-nav__links\">
+    <a href=\"index.html\">ホーム</a>
+    <a href=\"philosophy.html\">理念</a>
+    <a href=\"products.html\">製品</a>
+    <a href=\"technology.html\">技術</a>
+    <a class=\"is-current\" href=\"company.html\">会社概要</a>
+    <a href=\"contact.html\">お問い合わせ</a>
+  </nav>
+  <div class=\"mobile-nav__contact\"><a class=\"contact-btn\" href=\"contact.html\">お問い合わせ</a></div>
+</div>
+
+<header class=\"header\">
+  <div class=\"container header__inner\">
+    <a class=\"brand\" href=\"index.html\">
+      <span class=\"logo\"><span class=\"stem\"></span><span class=\"petal\"></span><span class=\"dot\"></span></span>
+      <span class=\"brand__title\">福福株式会社</span>
+    </a>
+    <nav class=\"nav\">
+      <a href=\"index.html\">ホーム</a>
+      <a href=\"philosophy.html\">理念</a>
+      <a href=\"products.html\">製品</a>
+      <a href=\"technology.html\">技術</a>
+      <a class=\"is-current\" href=\"company.html\">会社概要</a>
+    </nav>
+    <a class=\"contact-btn\" href=\"contact.html\">お問い合わせ</a>
+  </div>
+</header>
+
+<main>
+  <section class=\"page-hero\">
+    <div class=\"container\">
+      <div class=\"page-hero__box\">
+        <div class=\"page-hero__inner\">
+          <div class=\"breadcrumb\">ホーム / 会社概要</div>
+          <h1>会社概要</h1>
+          <p>福福株式会社の基本情報をまとめたページです。</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class=\"section\">
+    <div class=\"container section-box\">
+      <span class=\"section-tag\">Company</span>
+      <h2 class=\"section-title\">企業情報</h2>
+      <div class=\"company-grid\">
+        <div class=\"company-card\">
+          <h3>会社名</h3>
+          <p>福福株式会社（Fukufuku Co., Ltd.）</p>
+        </div>
+        <div class=\"company-card\">
+          <h3>所在地</h3>
+          <p>富山県南砺市</p>
+        </div>
+        <div class=\"company-card\">
+          <h3>ブランドコンセプト</h3>
+          <p>harmonize</p>
+        </div>
+        <div class=\"company-card\">
+          <h3>代表</h3>
+          <p>栗原 一郎</p>
+        </div>
+        <div class=\"company-card\">
+          <h3>主要製品</h3>
+          <p>リカバリーウェア，ハラマキ</p>
+        </div>
+        <div class=\"company-card\">
+          <h3>技術</h3>
+          <p>生体共鳴転写技術</p>
+        </div>
+      </div>
+      <div class=\"section-cta\">
+        <a class=\"btn-wide\" href=\"contact.html\">お問い合わせ</a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class=\"footer\">
+  <div class=\"container footer-inner\">
+    <div>© Fukufuku Co., Ltd.</div>
+    <div>harmonize</div>
+  </div>
+</footer>
+
+<script>
+  var toggle = document.getElementById('menuToggle');
+  var nav = document.getElementById('mobileNav');
+  var close = document.getElementById('menuClose');
+  toggle.addEventListener('click', function(){ nav.classList.add('is-open'); });
+  close.addEventListener('click', function(){ nav.classList.remove('is-open'); });
+  nav.querySelectorAll('a').forEach(function(a){ a.addEventListener('click', function(){ nav.classList.remove('is-open'); }); });
+</script>
+</body>
+</html>

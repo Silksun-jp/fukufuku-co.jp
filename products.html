@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang=\"ja\">
+<head>
+  <meta charset=\"UTF-8\">
+  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">
+  <title>製品 | 福福株式会社</title>
+  <link rel=\"stylesheet\" href=\"assets/styles.css\">
+</head>
+<body>
+
+<button class=\"menu-toggle\" id=\"menuToggle\" aria-label=\"メニューを開く\">
+  <span></span><span></span><span></span>
+</button>
+<div class=\"mobile-nav\" id=\"mobileNav\">
+  <div class=\"mobile-nav__header\">
+    <span class=\"brand__title\">福福株式会社</span>
+    <button class=\"mobile-nav__close\" id=\"menuClose\">&times;</button>
+  </div>
+  <nav class=\"mobile-nav__links\">
+    <a href=\"index.html\">ホーム</a>
+    <a href=\"philosophy.html\">理念</a>
+    <a class=\"is-current\" href=\"products.html\">製品</a>
+    <a href=\"technology.html\">技術</a>
+    <a href=\"company.html\">会社概要</a>
+    <a href=\"contact.html\">お問い合わせ</a>
+  </nav>
+  <div class=\"mobile-nav__contact\"><a class=\"contact-btn\" href=\"contact.html\">お問い合わせ</a></div>
+</div>
+
+<header class=\"header\">
+  <div class=\"container header__inner\">
+    <a class=\"brand\" href=\"index.html\">
+      <span class=\"logo\"><span class=\"stem\"></span><span class=\"petal\"></span><span class=\"dot\"></span></span>
+      <span class=\"brand__title\">福福株式会社</span>
+    </a>
+    <nav class=\"nav\">
+      <a href=\"index.html\">ホーム</a>
+      <a href=\"philosophy.html\">理念</a>
+      <a class=\"is-current\" href=\"products.html\">製品</a>
+      <a href=\"technology.html\">技術</a>
+      <a href=\"company.html\">会社概要</a>
+    </nav>
+    <a class=\"contact-btn\" href=\"contact.html\">お問い合わせ</a>
+  </div>
+</header>
+
+<main>
+  <section class=\"page-hero\">
+    <div class=\"container\">
+      <div class=\"page-hero__box\">
+        <div class=\"page-hero__inner\">
+          <div class=\"breadcrumb\">ホーム / 製品</div>
+          <h1>製品紹介</h1>
+          <p>日常の体のバランス維持をサポートする製品をご確認いただけます。</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class=\"section\">
+    <div class=\"container section-box\">
+      <span class=\"section-tag\">Products</span>
+      <h2 class=\"section-title\">日常に寄り添う製品</h2>
+      <div class=\"products-grid\">
+        <article class=\"product-card\">
+          <div class=\"product-image wear\"></div>
+          <div class=\"product-body\">
+            <div class=\"chips\">
+              <span class=\"chip\">生体共鳴転写</span>
+              <span class=\"chip\">体調サポート</span>
+              <span class=\"chip\">日常着用</span>
+            </div>
+            <h3>リカバリーウェア</h3>
+            <p>生地そのものに生体共鳴波長を転写加工したウェアです。着用中，体の表面から継続的に共鳴波が働きかけることで，日常の体のバランス維持をサポートします。</p>
+            <a class=\"button-ghost\" href=\"contact.html\">この製品について相談する</a>
+          </div>
+        </article>
+        <article class=\"product-card\">
+          <div class=\"product-image haramaki\"></div>
+          <div class=\"product-body\">
+            <div class=\"chips\">
+              <span class=\"chip\">生体共鳴転写</span>
+              <span class=\"chip\">腹部ケア</span>
+              <span class=\"chip\">日常着用</span>
+            </div>
+            <h3>ハラマキ</h3>
+            <p>生体共鳴波長を転写加工したハラマキです。腹部を温めながら，継続的に共鳴波が働きかけることで，日常の体のバランス維持をサポートします。</p>
+            <a class=\"button-ghost\" href=\"contact.html\">この製品について相談する</a>
+          </div>
+        </article>
+      </div>
+      <div class=\"section-cta\">
+        <a class=\"btn-wide\" href=\"contact.html\">製品について問い合わせる</a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class=\"footer\">
+  <div class=\"container footer-inner\">
+    <div>© Fukufuku Co., Ltd.</div>
+    <div>harmonize</div>
+  </div>
+</footer>
+
+<script>
+  var toggle = document.getElementById('menuToggle');
+  var nav = document.getElementById('mobileNav');
+  var close = document.getElementById('menuClose');
+  toggle.addEventListener('click', function(){ nav.classList.add('is-open'); });
+  close.addEventListener('click', function(){ nav.classList.remove('is-open'); });
+  nav.querySelectorAll('a').forEach(function(a){ a.addEventListener('click', function(){ nav.classList.remove('is-open'); }); });
+</script>
+</body>
+</html>
