@@ -423,8 +423,8 @@ ul,ol{list-style:none}
   gap:10px;
 }
 .info-card{
-  background:rgba(255,255,255,.92);
-  border:1px solid rgba(255,255,255,.88);
+  background:rgba(255,255,255,.98);
+  border:1px solid rgba(255,255,255,.95);
   backdrop-filter:blur(8px);
   -webkit-backdrop-filter:blur(8px);
   border-radius:16px;
