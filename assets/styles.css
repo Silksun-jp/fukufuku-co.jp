@@ -896,12 +896,11 @@ textarea{min-height:160px;resize:vertical}
   }
 
   .hero-cards{
-    position:absolute;
-    left:36px;right:36px;
-    bottom:28px;
+    position:static;
     flex-direction:row;
     gap:10px;
-    padding:0;
+    padding:14px 36px 20px;
+    background:rgba(248,245,238,.95);
   }
   .info-card{
     flex-direction:column;
