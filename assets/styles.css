@@ -317,18 +317,6 @@ ul,ol{list-style:none}
   min-height:580px;
   background:linear-gradient(180deg,#f4f7ef 0%,#eef3e4 100%);
 }
-.hero-stage::after{
-  content:"";
-  position:absolute;
-  inset:0;
-  background:linear-gradient(180deg,
-    transparent 40%,
-    rgba(248,245,238,.85) 75%,
-    rgba(248,245,238,.97) 100%
-  );
-  pointer-events:none;
-  z-index:2;
-}
 .hero-visual{
   position:absolute;
   inset:0;
@@ -444,6 +432,8 @@ ul,ol{list-style:none}
   align-items:flex-start;
   gap:14px;
   box-shadow:0 2px 12px rgba(0,0,0,.10);
+  position:relative;
+  z-index:10;
 }
 .info-card__icon{
   width:44px;
