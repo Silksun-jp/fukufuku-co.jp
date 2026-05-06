@@ -75,9 +75,15 @@
           </div>
         </article>
         <article class="product-card">
-          <div class="product-image-gallery">
-            <div class="product-image haramaki"></div>
-            <div class="product-image haramaki2"></div>
+          <div class="product-carousel">
+            <div class="product-carousel__slides">
+              <div class="product-carousel__slide active haramaki"></div>
+              <div class="product-carousel__slide haramaki2"></div>
+            </div>
+            <div class="product-carousel__dots">
+              <button class="product-carousel__dot active" data-index="0" aria-label="画像1"></button>
+              <button class="product-carousel__dot" data-index="1" aria-label="画像2"></button>
+            </div>
           </div>
           <div class="product-body">
             <div class="chips">
@@ -112,6 +118,19 @@
   toggle.addEventListener('click', function(){ nav.classList.add('is-open'); });
   close.addEventListener('click', function(){ nav.classList.remove('is-open'); });
   nav.querySelectorAll('a').forEach(function(a){ a.addEventListener('click', function(){ nav.classList.remove('is-open'); }); });
+
+  // カルーセル
+  var slides = document.querySelectorAll('.product-carousel__slide');
+  var dots = document.querySelectorAll('.product-carousel__dot');
+  dots.forEach(function(dot) {
+    dot.addEventListener('click', function() {
+      var idx = parseInt(this.getAttribute('data-index'));
+      slides.forEach(function(s){ s.classList.remove('active'); });
+      dots.forEach(function(d){ d.classList.remove('active'); });
+      slides[idx].classList.add('active');
+      dots[idx].classList.add('active');
+    });
+  });
 </script>
 </body>
 </html>
