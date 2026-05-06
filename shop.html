@@ -19,7 +19,8 @@
 
     /* HEADER */
     header{position:fixed;top:0;left:0;right:0;z-index:200;height:72px;display:flex;align-items:center;justify-content:space-between;padding:0 4vw;background:rgba(255,255,255,.95);backdrop-filter:blur(16px);border-bottom:1px solid var(--line);}
-    .header-logo{font-family:'Shippori Mincho B1',serif;font-size:1.05rem;font-weight:600;color:var(--text);text-decoration:none;letter-spacing:.08em;}
+    .header-logo{font-family:'Shippori Mincho B1',serif;font-size:1.05rem;font-weight:600;color:var(--text);text-decoration:none;letter-spacing:.08em;display:flex;align-items:center;gap:8px;}
+    .header-logo .fuku-logo-img{width:34px;height:34px;}
     .header-nav{display:flex;align-items:center;gap:2rem;}
     .header-nav a{font-size:.72rem;letter-spacing:.14em;color:var(--mid);text-decoration:none;transition:color .3s;}
     .header-nav a:hover{color:var(--text);}
@@ -98,7 +99,7 @@
 <body>
 
 <header>
-  <a href="index.html" class="header-logo">福福株式会社</a>
+  <a href="index.html" class="header-logo"><img src="img/fuku-logo.png" alt="FuKu FuKu" class="fuku-logo-img">福福株式会社</a>
   <div class="header-nav">
     <a href="index.html#concept">理念</a>
     <a href="index.html#services">事業内容</a>

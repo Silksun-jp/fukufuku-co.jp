@@ -62,8 +62,8 @@ ul,ol{list-style:none}
 
 /* Brand */
 .brand{display:flex;align-items:center;gap:8px}
-.fuku-logo-sq,.fuku-logo-circle{display:flex;align-items:center;flex-shrink:0;}
-.fuku-logo-sq svg,.fuku-logo-circle svg{display:block;}
+.fuku-logo-sq,.fuku-logo-circle{display:none;}
+.fuku-logo-img{width:36px;height:36px;border-radius:50%;object-fit:cover;flex-shrink:0;display:block;}
 .logo{
   position:relative;
   width:40px;
