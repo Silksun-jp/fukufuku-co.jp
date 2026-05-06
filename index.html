@@ -119,28 +119,8 @@
     <div class="container lower-grid">
       <div class="panel news">
         <div class="news-title">お知らせ</div>
-        <ul>
-          <li>
-            <div class="news-item">
-              <span class="date">2026.05.04</span>
-              <span class="cat">更新</span>
-              <span class="text">トップページのデザインを刷新しました</span>
-            </div>
-          </li>
-          <li>
-            <div class="news-item">
-              <span class="date">2026.05.03</span>
-              <span class="cat">技術</span>
-              <span class="text">Harmonize と製品の導線を整理しました</span>
-            </div>
-          </li>
-          <li>
-            <div class="news-item">
-              <span class="date">2026.05.01</span>
-              <span class="cat">案内</span>
-              <span class="text">新しいトップページの公開準備を進めています</span>
-            </div>
-          </li>
+        <ul id="newsList">
+          <li><div class="news-item"><span class="text">読み込み中…</span></div></li>
         </ul>
         <span class="more">一覧を見る →</span>
       </div>
@@ -208,6 +188,25 @@
   </div>
 </footer>
 
+<script>
+  // お知らせをnews.jsonから読み込む
+  fetch('news.json?v=' + Date.now())
+    .then(function(r){ return r.json(); })
+    .then(function(items){
+      var list = document.getElementById('newsList');
+      list.innerHTML = items.map(function(item){
+        return '<li><div class="news-item">'
+          + '<span class="date">' + item.date + '</span>'
+          + '<span class="cat">' + item.tag + '</span>'
+          + '<span class="text">' + item.text + '</span>'
+          + '</div></li>';
+      }).join('');
+    })
+    .catch(function(){
+      document.getElementById('newsList').innerHTML =
+        '<li><div class="news-item"><span class="text">お知らせを読み込めませんでした</span></div></li>';
+    });
+</script>
 <script>
   // Mobile nav
   var toggle = document.getElementById('menuToggle');
