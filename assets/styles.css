@@ -567,8 +567,13 @@ ul,ol{list-style:none}
   background-size:cover;
   background-position:center;
 }
-.product-image.wear{background-image:url('https://fukufuku-co.jp/img/long1.jpg')}
 .product-image.haramaki{background-image:url('https://fukufuku-co.jp/img/short3.jpg')}
+.product-image.haramaki2{background-image:url('https://fukufuku-co.jp/img/long1.jpg')}
+.product-image-gallery{display:flex;flex-direction:column;gap:4px}
+.product-image-gallery .product-image{aspect-ratio:16/9}
+.product-image--coming-soon{background:#f4f4f4;display:flex;align-items:center;justify-content:center;aspect-ratio:16/9}
+.coming-soon-label{display:inline-block;margin-top:8px;padding:6px 18px;background:#e8e8e8;color:#888;border-radius:20px;font-size:0.9rem;letter-spacing:0.05em;}
+.product-card--coming-soon{opacity:0.7;}
 .product-body{padding:20px 20px 22px}
 .chips{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:10px}
 .chip{
