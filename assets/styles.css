@@ -1034,3 +1034,254 @@ textarea{min-height:160px;resize:vertical}
   .section-cta{gap:14px}
   .btn-wide,.btn-wide-outline{padding:14px 32px;font-size:1rem}
 }
+
+/* =====================================================
+   MOBILE POLISH — 2026-05-26
+   スマートフォン表示の読みやすさ・操作性を強化
+   ===================================================== */
+@media (max-width:767px){
+  html, body{
+    overflow-x:hidden;
+  }
+  body{
+    font-size:15.5px;
+    line-height:1.75;
+  }
+  .container{
+    width:min(calc(100% - 24px),var(--max));
+  }
+
+  /* Header: ロゴを見せ、問い合わせボタンはメニュー内へ集約 */
+  .header{
+    min-height:58px;
+  }
+  .header__inner{
+    min-height:58px;
+    padding:0 56px 0 2px;
+  }
+  .header__inner > .contact-btn{
+    display:none;
+  }
+  .brand{
+    max-width:calc(100vw - 88px);
+  }
+  .brand__title{
+    font-size:.96rem;
+    letter-spacing:.02em;
+  }
+  .fuku-logo-img{
+    width:34px;
+    height:34px;
+  }
+  .menu-toggle{
+    position:fixed;
+    top:7px;
+    right:12px;
+    z-index:45;
+    background:rgba(255,255,255,.94);
+    box-shadow:0 4px 16px rgba(47,33,23,.12);
+    border:1px solid rgba(86,112,31,.12);
+  }
+  .mobile-nav__header{
+    gap:10px;
+  }
+  .mobile-nav__header .brand__title{
+    margin-right:auto;
+  }
+
+  /* Hero: スマホでは縦長すぎ・文字詰まりを抑える */
+  .hero{
+    padding-top:10px;
+  }
+  .hero-shell{
+    border-radius:18px;
+  }
+  .hero-stage{
+    min-height:auto;
+  }
+  .hero-visual{
+    position:absolute;
+    height:100%;
+    min-height:100%;
+    opacity:.82;
+    background-position:center top;
+  }
+  .hero-visual::after{
+    background:linear-gradient(180deg,
+      rgba(248,245,238,.96) 0%,
+      rgba(248,245,238,.92) 44%,
+      rgba(248,245,238,.78) 100%
+    );
+  }
+  .hero-content{
+    min-height:0;
+  }
+  .hero-copy{
+    padding:28px 20px 22px;
+    border-radius:18px 18px 0 0;
+    background:rgba(248,245,238,.86);
+  }
+  .eyebrow{
+    font-size:.68rem;
+    letter-spacing:.12em;
+  }
+  .hero-title{
+    font-size:clamp(1.72rem, 9vw, 2.18rem);
+    line-height:1.34;
+    margin-bottom:10px;
+  }
+  .hero-copy p{
+    font-size:.92rem;
+    line-height:1.78;
+  }
+  .hero-actions{
+    margin-top:16px;
+  }
+  .hero-actions .button-primary,
+  .hero-actions .button-ghost,
+  .product-body .button-ghost,
+  .btn-wide,
+  .btn-wide-outline,
+  .message .btn{
+    min-height:46px;
+    width:100%;
+    font-size:.94rem;
+  }
+  .hero-cards{
+    padding:12px;
+    gap:9px;
+  }
+  .info-card{
+    padding:13px 14px;
+    border-radius:14px;
+    gap:10px;
+  }
+  .info-card__icon{
+    width:38px;
+    height:38px;
+    flex-basis:38px;
+    font-size:1rem;
+  }
+  .info-card h3{
+    font-size:.92rem;
+  }
+  .info-card p{
+    font-size:.80rem;
+    line-height:1.5;
+  }
+
+  /* Sections */
+  .section{
+    padding:30px 0;
+  }
+  .section-box{
+    padding:24px 18px;
+    border-radius:18px;
+  }
+  .section-title{
+    font-size:1.42rem;
+    line-height:1.45;
+  }
+  .section-text{
+    font-size:.93rem;
+    line-height:1.82;
+  }
+  .page-hero{
+    padding-top:14px;
+  }
+  .page-hero__box{
+    min-height:220px;
+    border-radius:18px;
+  }
+  .page-hero__inner{
+    padding:30px 20px;
+  }
+  .page-hero__inner h1{
+    font-size:1.55rem;
+    line-height:1.45;
+  }
+  .page-hero__inner p{
+    font-size:.93rem;
+    line-height:1.8;
+  }
+
+  /* Panels / Products */
+  .lower-grid{
+    gap:12px;
+  }
+  .panel{
+    border-radius:15px;
+  }
+  .news{
+    padding:18px;
+  }
+  .news-item{
+    gap:3px;
+  }
+  .message{
+    min-height:230px;
+    padding:22px 20px 24px;
+  }
+  .message h2{
+    font-size:1.34rem;
+  }
+  .message p{
+    font-size:.88rem;
+  }
+  .products-grid{
+    gap:16px;
+    margin-top:18px;
+  }
+  .product-card{
+    border-radius:18px;
+  }
+  .product-body{
+    padding:18px 16px 20px;
+  }
+  .product-body h3{
+    font-size:1.12rem;
+  }
+  .product-body p{
+    font-size:.9rem;
+    line-height:1.78;
+  }
+  .chips{
+    gap:5px;
+  }
+  .chip{
+    font-size:.69rem;
+    padding:4px 8px;
+  }
+  .product-carousel{
+    max-height:none;
+  }
+
+  /* Company / Forms */
+  .company-card{
+    padding:16px;
+  }
+  .company-card p{
+    overflow-wrap:anywhere;
+  }
+  input,select,textarea{
+    font-size:16px; /* iPhoneの自動ズームを防止 */
+    padding:13px 14px;
+  }
+  .form-submit-row{
+    gap:8px;
+  }
+
+  /* Footer */
+  .footer{
+    padding:18px 0 30px;
+  }
+}
+
+@media (max-width:360px){
+  .container{width:min(calc(100% - 20px),var(--max));}
+  .hero-copy{padding:24px 16px 20px;}
+  .hero-cards{padding:10px;}
+  .info-card{padding:12px;}
+  .section-box{padding:22px 16px;}
+  .brand__title{font-size:.9rem;}
+}
