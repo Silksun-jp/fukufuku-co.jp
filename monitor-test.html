@@ -71,7 +71,6 @@
     .balance-state h3{margin:0 0 14px;font-size:1.1rem;color:#31411a}
     .balance-state p{margin:0;color:#4f463d;line-height:1.9;font-size:1rem;font-weight:700}
     .measurement-summary{max-width:760px;margin:0 auto;text-align:center}
-    .measurement-summary h3{margin:0 0 20px;font-size:1.1rem;color:#31411a}
     .measurement-summary p{margin:0 0 10px;color:#4f463d;font-size:1rem;line-height:1.9;font-weight:700}
     .measurement-note{max-width:760px;margin:26px auto 0;background:#f6efe0;border:1px solid #e4c98e;border-radius:22px;padding:20px 18px;text-align:center;color:#5a4d3f;font-size:1rem;line-height:1.9}
 
@@ -87,6 +86,8 @@
       .balance-state{margin-top:18px !important; padding:18px 14px !important;}
       .measurement-summary p{font-size:.95rem !important; line-height:1.8 !important;}
       .measurement-note{padding:16px 14px !important; font-size:.94rem !important; line-height:1.8 !important;}
+      .sample-grid{grid-template-columns:1fr !important;}
+      .comparison-table th,.comparison-table td{font-size:.84rem !important; padding:9px 7px !important;}
       .page-hero__inner{padding:22px 16px !important;}
       .page-hero__inner h1{font-size:1.42rem !important; line-height:1.35 !important;}
       .page-hero__box{min-height:auto !important;}
@@ -147,7 +148,7 @@
         <div class="page-hero__inner">
           <div class="breadcrumb">ホーム / 製品 / 検証テスト結果</div>
           <h1>リカバリーウェア 検証テスト結果</h1>
-          <p>200名の協力者による測定をもとに、着る前後の身体コンディションの変化を整理しました。</p>
+          <p>200名の協力者による測定をもとに、着る前後の変化を見やすくまとめました。</p>
         </div>
       </div>
     </div>
@@ -157,7 +158,6 @@
     <div class="container section-box">
       <span class="section-tag">検証レポート</span>
       <h2 class="section-title">着ることで、体をいたわるということ</h2>
-
       <div class="hero-card">
         <div class="hero-card__grid">
           <div>
@@ -166,62 +166,46 @@
               <div class="mini-kpi"><b>200名</b><span>協力者</span></div>
               <div class="mini-kpi"><b>15分</b><span>着た後の目安</span></div>
             </div>
-            <div class="badge-row">
-              <span class="badge">自律神経バランス</span>
-              <span class="badge">自律神経年齢</span>
-              <span class="badge">総合スコア</span>
-              <span class="badge">波形パターン</span>
-            </div>
           </div>
-
         </div>
       </div>
 
-      <section class="section" style="padding-top:10px;">
-        <div class="container section-box">
-          <h2 class="section-title">体のしくみ</h2>
-          <p class="comparison-sub" style="text-align:center;max-width:760px;margin-left:auto;margin-right:auto;">体には、動くときの働きと、休むときの働きがあります。3つに分けて見ると分かりやすくなります。</p>
-          <div class="balance-cards">
-            <article class="balance-card">
-              <h3>交感神経</h3>
-              <p>動くときに働きやすい力です。活動中や集中したいときに高まりやすくなります。</p>
-            </article>
-            <article class="balance-card">
-              <h3>副交感神経</h3>
-              <p>休むときに働きやすい力です。くつろぎたいときや、体を整えたいときに高まりやすくなります。</p>
-            </article>
-            <article class="balance-card">
-              <h3>大切なのはバランス</h3>
-              <p>動く力と休む力の両方が整っているかを見ることがポイントです。</p>
-            </article>
-          </div>
-          <div class="balance-state">
-            <h3>状態の見方</h3>
-            <p>元気に動ける状態</p>
-            <p>バランスが整っている状態</p>
-            <p>動く力が強めの状態</p>
-            <p>休む力が強めの状態</p>
-          </div>
-        </div>
-      </section>
-
-      <section class="section" style="padding-top:4px;">
-        <div class="container section-box">
-          <h2 class="section-title">測定で分かること</h2>
-          <div class="measurement-summary">
-            <p><b>今の体のバランス：</b> 活動モードと休息モードの偏りを確認</p>
-            <p><b>休めているか：</b> 体がリラックスしやすい状態かを確認</p>
-            <p><b>がんばりすぎていないか：</b> 緊張や疲れが続きやすい状態かを確認</p>
-            <p><b>着る前後の変化：</b> 着用前と着用後で、数値にどんな変化があるかを確認</p>
-          </div>
-          <div class="measurement-note">
-            難しい専門用語ではなく、体が「動くモード」か「休むモード」か、そのバランスを見るための参考情報です。
-          </div>
-        </div>
-      </section>
-      <div class="section-cta">
-        <a class="btn-wide" href="#cases">例を見る</a>
+      <h2 class="section-title" style="margin-top:28px;">体のしくみ</h2>
+      <p class="comparison-sub" style="text-align:center;max-width:760px;margin-left:auto;margin-right:auto;">体には、動くときの働きと、休むときの働きがあります。3つに分けて見ると分かりやすくなります。</p>
+      <div class="balance-cards">
+        <article class="balance-card">
+          <h3>交感神経</h3>
+          <p>動くときに働きやすい力です。活動中や集中したいときに高まりやすくなります。</p>
+        </article>
+        <article class="balance-card">
+          <h3>副交感神経</h3>
+          <p>休むときに働きやすい力です。くつろぎたいときや、体を整えたいときに高まりやすくなります。</p>
+        </article>
+        <article class="balance-card">
+          <h3>大切なのはバランス</h3>
+          <p>動く力と休む力の両方が整っているかを見ることがポイントです。</p>
+        </article>
       </div>
+      <div class="balance-state">
+        <h3>状態の見方</h3>
+        <p>元気に動ける状態</p>
+        <p>バランスが整っている状態</p>
+        <p>動く力が強めの状態</p>
+        <p>休む力が強めの状態</p>
+      </div>
+
+      <h2 class="section-title" style="margin-top:30px;">測定で分かること</h2>
+      <div class="measurement-summary">
+        <p><b>今の体のバランス：</b>活動モードと休息モードの偏りを確認</p>
+        <p><b>休めているか：</b>体がリラックスしやすい状態かを確認</p>
+        <p><b>がんばりすぎていないか：</b>緊張や疲れが続きやすい状態かを確認</p>
+        <p><b>着る前後の変化：</b>着用前と着用後で、数値にどんな変化があるかを確認</p>
+      </div>
+      <div class="measurement-note">
+        難しい専門用語ではなく、体が「動くモード」か「休むモード」か、そのバランスを見るための参考情報です。
+      </div>
+
+      <div class="section-cta"><a class="btn-wide" href="#cases">例を見る</a></div>
     </div>
   </section>
 
@@ -289,7 +273,7 @@
           </tbody>
         </table>
       </div>
-      <div class="info-grid" style="margin-top:18px;">
+      <div class="info-grid" style="margin-top:18px;grid-template-columns:1fr;">
         <div class="info-card">
           <h3>※注意書き</h3>
           <p>本ページは体の状態を知るための参考情報です。<br>※この結果は医療行為ではありません。診断や治療を目的としたものではありません。</p>
