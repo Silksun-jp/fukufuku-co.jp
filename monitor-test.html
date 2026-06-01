@@ -57,7 +57,7 @@
     .comparison-table td:nth-child(3),.comparison-table td:nth-child(4),.comparison-table td:nth-child(5),.comparison-table td:nth-child(6){text-align:center}
     .safe-box{background:#f4f8ea;border:1px solid #dfe8c3;border-radius:16px;padding:16px}
     .note{background:#fff8e8;border:1px solid #eed6a7;border-radius:16px;padding:16px;color:#584b3a}
-    .mobile-balance{display:none;gap:10px;margin-top:12px}
+    .mobile-balance{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:12px}
     .mobile-balance__card{background:#fff;border:1px solid rgba(102,130,31,.10);border-radius:14px;padding:14px}
     .mobile-balance__card strong{display:block;margin-bottom:6px;color:#2f3b17}
     .mobile-balance__card p{margin:0;color:#5a4e43;font-size:.92rem;line-height:1.6}
@@ -83,7 +83,7 @@
 
       /* mobile diagram: hide complex figure and show simple cards */
       .diagram{display:none !important;}
-      .mobile-balance{display:grid !important;}
+      .mobile-balance{grid-template-columns:1fr !important;}
       .safe-box{padding:14px !important;}
     }
   </style>
@@ -161,7 +161,7 @@
       <div class="info-grid">
         <div class="info-card">
           <h3>体のしくみ</h3>
-          <p>体には、動くときの働きと、休むときの働きがあります。そのバランスを見ることで今の状態が分かりやすくなります。</p>
+          <p>体には、動くときの働きと、休むときの働きがあります。3つに分けて見ると分かりやすくなります。</p>
           <div class="mobile-balance">
             <div class="mobile-balance__card">
               <strong>交感神経</strong>
@@ -175,23 +175,6 @@
               <strong>大切なのはバランス</strong>
               <p>動く力と休む力の両方が整っているかを見ることがポイントです。</p>
             </div>
-          </div>
-          <div class="diagram">
-            <div class="diagram__grid">
-              <div class="nerve nerve--activity">
-                <strong>交感神経</strong>
-                <small>動くときに働きやすい</small>
-              </div>
-              <div class="balance">
-                <div class="balance__circle">◎</div>
-                <div class="balance__label">今のバランス</div>
-              </div>
-              <div class="nerve nerve--rest">
-                <strong>副交感神経</strong>
-                <small>休むときに働きやすい</small>
-              </div>
-            </div>
-            <div class="flow"><span>活動モード</span><span>← ちょうどよいバランス →</span><span>休息モード</span></div>
           </div>
           <div class="safe-box" style="margin-top:14px;">
             <strong>状態の見方</strong>
