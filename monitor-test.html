@@ -51,12 +51,19 @@
       padding:18px;
       margin-top:16px;
     }
-    .bar-list{display:grid;gap:12px;margin-top:12px}
-    .bar-item{display:grid;grid-template-columns:88px 1fr 64px;gap:10px;align-items:center}
-    .bar-label{font-size:.88rem;font-weight:700;color:#594e42;line-height:1.25}
-    .bar-track{height:14px;background:#ece8df;border-radius:999px;overflow:hidden}
-    .bar-fill{display:block;height:100%;border-radius:999px;background:linear-gradient(90deg,#7ea73d,#aac85a)}
-    .bar-value{font-weight:800;color:#3b332a;text-align:right}
+    .diagram-wrap{display:grid;gap:14px;margin-top:12px}
+    .autonomic-diagram{background:#fff;border:1px solid rgba(93,107,53,.10);border-radius:18px;padding:18px}
+    .autonomic-diagram__grid{display:grid;grid-template-columns:1fr 72px 1fr;gap:12px;align-items:center}
+    .nerve-box{border-radius:16px;padding:16px;min-height:160px;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;box-shadow:0 6px 18px rgba(0,0,0,.04)}
+    .nerve-box strong{display:block;font-size:1.15rem;margin-bottom:8px}
+    .nerve-box small{display:block;color:#665c51;font-weight:700;line-height:1.5}
+    .nerve-box--activity{background:linear-gradient(180deg,#fff3e0,#ffe7c2);border:1px solid rgba(234,146,35,.18)}
+    .nerve-box--rest{background:linear-gradient(180deg,#eef7dd,#e5f0c3);border:1px solid rgba(107,134,39,.18)}
+    .balance-core{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:8px}
+    .balance-core__circle{width:54px;height:54px;border-radius:50%;background:linear-gradient(180deg,#f5f2ea,#e7e1d2);display:grid;place-items:center;font-size:1.6rem;font-weight:900;color:#574b3c;border:1px solid rgba(93,107,53,.12)}
+    .balance-core__label{font-size:.82rem;font-weight:800;color:#6a6157;text-align:center;line-height:1.25}
+    .flow-row{display:flex;justify-content:space-between;align-items:center;gap:8px;margin-top:10px;font-size:.88rem;font-weight:700;color:#5f554b}
+    .flow-pill{padding:6px 10px;border-radius:999px;background:#f5f1e7;border:1px solid rgba(93,107,53,.10)}
     .badge-row{display:flex;flex-wrap:wrap;gap:8px;margin-top:12px}
     .badge{display:inline-flex;align-items:center;padding:6px 10px;border-radius:999px;background:#fff;border:1px solid rgba(93,107,53,.14);font-size:.8rem;font-weight:700;color:#556b20}
     .two-col{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:18px}
@@ -132,7 +139,7 @@
       <div class="hero-card">
         <div class="hero-card__grid">
           <div>
-            <p style="margin:0 0 10px;color:#5a4e43;">約15分の着用前後で、瞳孔の動きから自律神経バランスを確認し、身体コンディションの傾向を見える化しました。</p>
+            <p style="margin:0 0 10px;color:#5a4e43;">約15分の着用前後で、瞳孔の動きから自律神経バランスを確認しました。</p>
             <div class="hero-card__kpis">
               <div class="mini-kpi"><b>200名</b><span>モニター協力者</span></div>
               <div class="mini-kpi"><b>36組</b><span>比較できたデータ</span></div>
@@ -159,26 +166,56 @@
 
       <div class="two-col">
         <div class="chart-card">
-          <h3 style="margin-top:0;">自律神経バランスの見方</h3>
-          <p style="margin-bottom:10px;">交感神経は「活動・集中のアクセル役」、副交感神経は「休息・回復のブレーキ役」。そのバランスを4象限で見ます。</p>
-          <div class="safe-box">
-            <strong>測定結果の傾向</strong>
-            <ul style="margin:8px 0 0;padding-left:1.2em;">
-              <li>高パフォーマンス：活動と休息の両方が高い</li>
-              <li>良好バランス：安定している</li>
-              <li>活動側が優位：緊張・集中が続きやすい</li>
-              <li>休息側が優位：だるさ・眠気を感じやすい</li>
-            </ul>
+          <h3 style="margin-top:0;">自律神経のしくみ</h3>
+          <p style="margin-bottom:10px;">交感神経は「活動・集中のアクセル役」、副交感神経は「休息・回復のブレーキ役」。この2つのバランスを、やさしい図で見ると分かりやすくなります。</p>
+          <div class="diagram-wrap">
+            <div class="autonomic-diagram">
+              <div class="autonomic-diagram__grid">
+                <div class="nerve-box nerve-box--activity">
+                  <strong>交感神経</strong>
+                  <small>活動・集中・緊張のときに働きやすい</small>
+                </div>
+                <div class="balance-core">
+                  <div class="balance-core__circle">◎</div>
+                  <div class="balance-core__label">バランス</div>
+                </div>
+                <div class="nerve-box nerve-box--rest">
+                  <strong>副交感神経</strong>
+                  <small>休息・回復・リラックスのときに働きやすい</small>
+                </div>
+              </div>
+              <div class="flow-row">
+                <span class="flow-pill">活動モード</span>
+                <span>← ちょうどよいバランス →</span>
+                <span class="flow-pill">休息モード</span>
+              </div>
+            </div>
+            <div class="safe-box">
+              <strong>測定結果の見方</strong>
+              <ul style="margin:8px 0 0;padding-left:1.2em;">
+                <li>高パフォーマンス：活動と休息の両方が高い</li>
+                <li>良好バランス：安定している</li>
+                <li>活動側が優位：緊張・集中が続きやすい</li>
+                <li>休息側が優位：だるさ・眠気を感じやすい</li>
+              </ul>
+            </div>
           </div>
         </div>
         <div class="chart-card">
           <h3 style="margin-top:0;">チラシで使いやすい見せ方</h3>
-          <div class="bar-list">
-            <div class="bar-item"><div class="bar-label">着用前</div><div class="bar-track"><span class="bar-fill" style="width:58%"></span></div><div class="bar-value">58</div></div>
-            <div class="bar-item"><div class="bar-label">着用後</div><div class="bar-track"><span class="bar-fill" style="width:74%"></span></div><div class="bar-value">74</div></div>
-            <div class="bar-item"><div class="bar-label">見せたい点</div><div class="bar-track"><span class="bar-fill" style="width:86%"></span></div><div class="bar-value">変化</div></div>
+          <div class="safe-box">
+            <strong>見せたいポイント</strong>
+            <ul style="margin:8px 0 0;padding-left:1.2em;">
+              <li>着用前後で、身体の状態に変化がある</li>
+              <li>自律神経のバランスを数値と図で確認できる</li>
+              <li>専門用語がなくても、状態の流れが伝わる</li>
+            </ul>
           </div>
-          <p style="margin-top:12px;color:#5a4e43;">“着る前後で数値が変化した”ことを、棒グラフや比較表で見せると分かりやすくなります。</p>
+          <div style="margin-top:14px;display:grid;grid-template-columns:1fr 1fr;gap:10px;">
+            <div class="callout" style="background:#fff;border-color:#e9e1d0;"><strong>着用前</strong><p style="margin:0;">体の状態を測定</p></div>
+            <div class="callout" style="background:#fff;border-color:#e9e1d0;"><strong>着用後</strong><p style="margin:0;">約15分後に再測定</p></div>
+          </div>
+          <p style="margin-top:12px;color:#5a4e43;">専門的な数値は、一般の人にはこのような“図と流れ”で見せると伝わりやすくなります。</p>
         </div>
       </div>
 
