@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>メカラ ｜ 自律神経バランス解説 ｜ 福福株式会社</title>
+<meta name="description" content="メカラは、今の自分の状態を知るためのセルフチェック体験です。自律神経のしくみと、結果の見方をやさしく解説します。特定の商品の効果を示すものではありません。">
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700&family=Noto+Serif+JP:wght@400;500&display=swap');
+
+  * { box-sizing:border-box; margin:0; padding:0; }
+  :root {
+    --bg:#F4F3EC; --ink:#2C2C2A; --soft:#6A6A62; --line:#E4E2D8;
+    --teal1:#8FC9BC; --teal2:#BFE2D6; --teal-d:#3E8F7C;
+    --pill-bg:#E3F1E8; --pill-tx:#3A7D5C;
+    --sym:#D98A33; --sym-bg:#FBEFDD; --sym-bd:#F0CB93;
+    --para:#2E9E78; --para-bg:#E6F5EE; --para-bd:#A4D9C4;
+    --card:#FFFFFF; --cardbd:#E6E4DA;
+  }
+  html { scroll-behavior:smooth; }
+  body { font-family:'Noto Sans JP', sans-serif; color:var(--ink); background:var(--bg); line-height:1.85; }
+  .wrap { max-width:880px; margin:0 auto; padding:0 20px; }
+  svg { display:block; }
+
+  header { background:rgba(244,243,236,0.92); border-bottom:1px solid var(--line); position:sticky; top:0; z-index:10; backdrop-filter:blur(4px); }
+  .head-in { display:flex; justify-content:space-between; align-items:baseline; padding:13px 0; }
+  .head-co { font-size:14px; font-weight:700; letter-spacing:0.04em; }
+  .head-cat { font-size:11px; color:var(--soft); letter-spacing:0.14em; }
+
+  /* hero */
+  .hero { background:linear-gradient(120deg, var(--teal1), var(--teal2)); }
+  .hero-in { padding:38px 20px 34px; max-width:880px; margin:0 auto; display:flex; gap:18px; align-items:center; }
+  .hero .icon { width:52px; height:52px; flex-shrink:0; }
+  .hero h1 { font-family:'Noto Serif JP', serif; font-weight:500; font-size:27px; color:#1f4f45; letter-spacing:0.02em; line-height:1.4; }
+  .hero .sub { font-size:13px; color:#2e6457; margin-top:6px; }
+
+  .intro { background:#fff; border:1px solid var(--cardbd); border-radius:12px; padding:18px 22px; margin-top:26px; }
+  .intro p { font-size:15px; color:#3a3a36; }
+  .intro .dis { font-size:12.5px; color:var(--soft); margin-top:8px; }
+
+  section { padding:34px 0 6px; }
+  .sec-label { display:flex; align-items:center; gap:10px; margin-bottom:16px; }
+  .pill { display:inline-block; background:var(--pill-bg); color:var(--pill-tx); font-size:11px; font-weight:700; padding:4px 13px; border-radius:20px; letter-spacing:0.05em; }
+  .sec-label .h { font-family:'Noto Serif JP', serif; font-size:21px; font-weight:500; letter-spacing:0.03em; }
+
+  .grid2 { display:grid; grid-template-columns:1fr 1fr; gap:14px; }
+  .grid3 { display:grid; grid-template-columns:repeat(3,1fr); gap:14px; }
+  .grid4 { display:grid; grid-template-columns:repeat(4,1fr); gap:13px; }
+
+  /* steps */
+  .steps { display:grid; grid-template-columns:repeat(4,1fr); gap:10px; }
+  .step { border:1px solid var(--cardbd); border-radius:11px; padding:15px 8px; text-align:center; background:#fff; }
+  .step .si { width:30px; height:30px; margin:0 auto 7px; color:var(--teal-d); }
+  .step .sn { font-size:10px; color:var(--teal-d); font-weight:700; letter-spacing:0.06em; }
+  .step .sl { font-size:14px; font-weight:700; margin-top:3px; }
+  .miniflow { font-size:13.5px; color:var(--soft); margin-top:12px; }
+
+  .lcard, .card, .nerve, .zone, .wave, .tip, .chartcard { background:#fff; border:1px solid var(--cardbd); border-radius:12px; }
+  .lcard { padding:16px 18px; }
+  .lcard .lh { font-size:15px; font-weight:700; color:var(--teal-d); margin-bottom:5px; }
+  .lcard .lc { font-size:13.5px; color:#555; line-height:1.75; }
+
+  .statebox { background:#EAF3EE; border-radius:12px; padding:18px 22px; margin-top:16px; }
+  .statebox .st { font-size:15px; font-weight:700; color:#1d7a57; margin-bottom:10px; }
+  .statebox .items { display:flex; flex-wrap:wrap; gap:9px; }
+  .statebox .it { font-size:13.5px; background:#fff; border:1px solid var(--para-bd); border-radius:20px; padding:5px 15px; }
+
+  /* nerve */
+  .nerve { padding:18px 18px; border:1px solid; text-align:center; }
+  .nerve.sym { background:var(--sym-bg); border-color:var(--sym-bd); }
+  .nerve.para { background:var(--para-bg); border-color:var(--para-bd); }
+  .nerve .ic { width:38px; height:38px; margin:0 auto 8px; }
+  .nerve .nm { font-size:18px; font-weight:700; }
+  .nerve.sym .nm { color:#b56a16; } .nerve.para .nm { color:#1d7a57; }
+  .nerve .role { font-size:14px; font-weight:700; margin-top:3px; color:#444; }
+  .nerve .desc { font-size:13.5px; color:#555; margin-top:7px; line-height:1.75; }
+  .carbox { background:#EAF3EE; border-left:4px solid var(--para); border-radius:0 10px 10px 0; padding:16px 20px; margin-top:14px; }
+  .carbox .t { font-size:15px; font-weight:700; color:#1d7a57; margin-bottom:4px; }
+  .carbox p { font-size:14px; color:#444; line-height:1.85; }
+
+  /* chart + score */
+  .chartwrap { display:grid; grid-template-columns:1.05fr 0.95fr; gap:18px; align-items:start; }
+  .chartcard { padding:14px; }
+  .card { padding:18px 20px; }
+  .card .ttl { font-size:15px; font-weight:700; color:var(--teal-d); margin-bottom:6px; }
+  .card p { font-size:14px; color:#444; line-height:1.85; }
+  .scorebar { height:13px; border-radius:7px; margin:12px 0 6px; background:linear-gradient(90deg,#E8705A,#EDC04B 50%,#6FB97F); }
+  .scalerow { display:flex; justify-content:space-between; font-size:11.5px; color:var(--soft); }
+
+  /* zones */
+  .zone { padding:16px 18px; border:1px solid var(--cardbd); }
+  .zone .top { display:flex; align-items:center; gap:9px; margin-bottom:6px; }
+  .zone .dot { width:15px; height:15px; border-radius:50%; flex-shrink:0; }
+  .zone .zn { font-size:15px; font-weight:700; }
+  .zone .zd { font-size:13px; color:#555; line-height:1.7; }
+
+  /* waveforms */
+  .wave { padding:14px 15px; }
+  .wave .wt { font-size:13.5px; font-weight:700; margin-bottom:7px; }
+  .wave svg { width:100%; height:46px; }
+  .wave .wd { font-size:12px; color:#666; line-height:1.65; margin-top:7px; }
+
+  /* tips */
+  .tip { display:flex; gap:14px; padding:16px 18px; align-items:flex-start; }
+  .tip .ti { width:30px; height:30px; flex-shrink:0; color:var(--teal-d); margin-top:2px; }
+  .tip .th { font-size:15px; font-weight:700; }
+  .tip .tc { font-size:13px; color:#555; line-height:1.7; margin-top:3px; }
+
+  .note { background:#fff; border:1px solid var(--cardbd); border-radius:12px; padding:16px 20px; margin-top:30px; font-size:12.5px; color:var(--soft); line-height:1.8; }
+
+  footer { border-top:1px solid var(--line); margin-top:30px; padding:26px 0 40px; }
+  .foot-in { display:flex; justify-content:space-between; align-items:baseline; flex-wrap:wrap; gap:10px; }
+  .foot-co { font-size:15px; font-weight:700; }
+  .foot-web { font-size:13.5px; color:var(--teal-d); font-weight:500; text-decoration:none; }
+
+  @media (max-width:720px) {
+    .hero h1 { font-size:22px; }
+    .hero-in { gap:14px; }
+    .grid2, .grid3, .grid4, .steps, .chartwrap { grid-template-columns:1fr; }
+    .grid4 { grid-template-columns:1fr 1fr; }
+    .steps { grid-template-columns:1fr 1fr; }
+    .sec-label .h { font-size:18px; }
+  }
+</style>
+</head>
+<body>
+
+  <header>
+    <div class="wrap head-in">
+      <div class="head-co">福福株式会社</div>
+      <div class="head-cat">メカラ ｜ 自律神経バランス解説</div>
+    </div>
+  </header>
+
+  <!-- hero -->
+  <div class="hero">
+    <div class="hero-in">
+      <svg class="icon" viewBox="0 0 48 48" fill="none">
+        <circle cx="24" cy="24" r="21" fill="#ffffff" opacity="0.55"/>
+        <ellipse cx="24" cy="24" rx="16" ry="10" fill="none" stroke="#1f4f45" stroke-width="2"/>
+        <circle cx="24" cy="24" r="5.5" fill="#1f4f45"/><circle cx="22" cy="22" r="1.6" fill="#fff"/>
+      </svg>
+      <div>
+        <h1>自律神経バランスってなに？</h1>
+        <div class="sub">メカラ ── 今のあなたの状態を知る、セルフチェック体験のご説明</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="wrap">
+    <div class="intro">
+      <p>メカラは、目（瞳孔）の動きをAIで解析して、<strong>今のご自身の自律神経の状態</strong>を数値で見られるセルフチェック体験です。専門的な知識がなくても、目に当てるだけで測定できます。</p>
+      <p class="dis">※ このページは、ご自身の状態を知るための参考情報です。特定の商品の効果を示すものではありません。</p>
+    </div>
+
+    <!-- 測定の流れ -->
+    <section>
+      <div class="sec-label"><span class="pill">基本</span><span class="h">測定の流れ</span></div>
+      <div class="steps">
+        <div class="step"><svg class="si" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><ellipse cx="16" cy="16" rx="12" ry="8"/><circle cx="16" cy="16" r="3.5"/></svg><div class="sn">STEP 1</div><div class="sl">目に当てる</div></div>
+        <div class="step"><svg class="si" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="16" cy="16" r="11"/><path d="M16 9 V16 L21 19"/></svg><div class="sn">STEP 2</div><div class="sl">約7秒待つ</div></div>
+        <div class="step"><svg class="si" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="7" y="7" width="18" height="18" rx="3"/><path d="M12 16 L15 19 L21 12"/></svg><div class="sn">STEP 3</div><div class="sl">AIが解析</div></div>
+        <div class="step"><svg class="si" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="6" y="8" width="20" height="14" rx="2"/><path d="M10 18 L13 14 L16 16 L19 11 L22 15"/></svg><div class="sn">STEP 4</div><div class="sl">結果を表示</div></div>
+      </div>
+      <p class="miniflow">目に光を当てると、瞳孔（黒目）は自然に小さくなります（対光反射）。この動きのパターンから、今の自律神経の状態を読み取ります。</p>
+    </section>
+
+    <!-- わかること -->
+    <section>
+      <div class="sec-label"><span class="pill">わかること</span><span class="h">メカラで分かること</span></div>
+      <div class="grid3">
+        <div class="lcard"><div class="lh">今の体のバランス</div><div class="lc">活動モードと休息モード、どちらに偏っているかを確認できます。</div></div>
+        <div class="lcard"><div class="lh">休めているか</div><div class="lc">体がリラックスしやすい状態にあるかを確認できます。</div></div>
+        <div class="lcard"><div class="lh">がんばりすぎていないか</div><div class="lc">緊張や疲れが続きやすい状態かを、目安として確認できます。</div></div>
+      </div>
+      <div class="statebox">
+        <div class="st">状態の見方（4つの目安）</div>
+        <div class="items"><span class="it">元気に動ける状態</span><span class="it">バランスが整っている状態</span><span class="it">動く力が強めの状態</span><span class="it">休む力が強めの状態</span></div>
+      </div>
+    </section>
+
+    <!-- 自律神経って何 -->
+    <section>
+      <div class="sec-label"><span class="pill">しくみ</span><span class="h">自律神経って何？</span></div>
+      <div class="grid2">
+        <div class="nerve sym">
+          <svg class="ic" viewBox="0 0 32 32" fill="#D98A33"><path d="M18 2 L7 18 H15 L13 30 L25 12 H17 Z"/></svg>
+          <div class="nm">交感神経</div><div class="role">「アクセル」</div>
+          <div class="desc">緊張・興奮・やる気。昼間や活動中に高まりやすい。</div>
+        </div>
+        <div class="nerve para">
+          <svg class="ic" viewBox="0 0 32 32" fill="#2E9E78"><path d="M16 28 C16 18, 22 10, 28 6 C26 16, 22 24, 16 28 Z"/><path d="M16 28 C16 20, 11 14, 5 11 C6 19, 10 25, 16 28 Z"/></svg>
+          <div class="nm">副交感神経</div><div class="role">「ブレーキ」</div>
+          <div class="desc">リラックス・休息。夜や休んでいるときに高まりやすい。</div>
+        </div>
+      </div>
+      <div class="carbox">
+        <div class="t">車に例えると…</div>
+        <p>交感神経＝アクセル、副交感神経＝ブレーキ。どちらかだけが強すぎると体に負担がかかります。2つのバランスが整っている状態が、心も体も心地よい状態です。</p>
+      </div>
+    </section>
+
+    <!-- チャート -->
+    <section>
+      <div class="sec-label"><span class="pill">グラフ</span><span class="h">自律神経バランスチャート</span></div>
+      <div class="chartwrap">
+        <div class="chartcard">
+          <svg viewBox="0 0 360 250" width="100%">
+            <rect x="55" y="20" width="138" height="100" fill="#FBEFDD"/>
+            <rect x="193" y="20" width="138" height="100" fill="#EAF3EE"/>
+            <rect x="55" y="120" width="138" height="100" fill="#F1F0EA"/>
+            <rect x="193" y="120" width="138" height="100" fill="#EAF3EE"/>
+            <ellipse cx="245" cy="120" rx="78" ry="62" fill="#9FD3B8" opacity="0.30"/>
+            <line x1="55" y1="20" x2="55" y2="220" stroke="#9a9a90" stroke-width="1.3"/>
+            <line x1="55" y1="220" x2="331" y2="220" stroke="#9a9a90" stroke-width="1.3"/>
+            <text x="30" y="120" font-size="9" fill="#6A6A62" transform="rotate(-90 30 120)" text-anchor="middle">交感神経 →</text>
+            <text x="193" y="240" font-size="9" fill="#6A6A62" text-anchor="middle">副交感神経 →</text>
+            <g font-size="11" font-weight="700" text-anchor="middle">
+              <circle cx="105" cy="55" r="13" fill="#fff" stroke="#D98A33" stroke-width="1.6"/><text x="105" y="59" fill="#b56a16">5</text>
+              <circle cx="282" cy="55" r="13" fill="#fff" stroke="#2E9E78" stroke-width="1.6"/><text x="282" y="59" fill="#1d7a57">1</text>
+              <circle cx="105" cy="135" r="13" fill="#fff" stroke="#7a8aa0" stroke-width="1.6"/><text x="105" y="139" fill="#566">3</text>
+              <circle cx="232" cy="125" r="13" fill="#fff" stroke="#2E9E78" stroke-width="1.6"/><text x="232" y="129" fill="#1d7a57">2</text>
+              <circle cx="105" cy="190" r="13" fill="#fff" stroke="#9a9a90" stroke-width="1.6"/><text x="105" y="194" fill="#666">4</text>
+              <circle cx="282" cy="190" r="13" fill="#fff" stroke="#5aa0c0" stroke-width="1.6"/><text x="282" y="194" fill="#2f7e9e">6</text>
+            </g>
+            <g font-size="7.5" fill="#777" text-anchor="middle">
+              <text x="105" y="74">交感優位</text><text x="282" y="74">高ﾊﾟﾌｫｰﾏﾝｽ</text>
+              <text x="105" y="154">副交感不活性</text><text x="232" y="144">良いバランス</text>
+              <text x="105" y="209">両方不活性</text><text x="282" y="209">副交感優位</text>
+            </g>
+          </svg>
+        </div>
+        <div>
+          <div class="card" style="margin-bottom:14px;">
+            <div class="ttl">総合スコア（0〜100点）</div>
+            <p>自律神経が整っている理想的な状態を100点として、今の状態を数値で表したもの。高いほど心身ともに落ち着いた状態です。</p>
+            <div class="scorebar"></div>
+            <div class="scalerow"><span>0点｜要注意</span><span>50点｜普通</span><span>100点｜良好</span></div>
+          </div>
+          <div class="card">
+            <div class="ttl">自律神経年齢とは？</div>
+            <p>自律神経の状態を年齢に置き換えて表した参考指標です。実年齢より若めだと元気なサイン、高めだと生活リズムを見直すきっかけに。</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ゾーン -->
+    <section>
+      <div class="sec-label"><span class="pill">ゾーン解説</span><span class="h">6つのゾーンの意味</span></div>
+      <div class="grid3">
+        <div class="zone" style="border-color:#A4D9C4;"><div class="top"><span class="dot" style="background:#2E9E78;"></span><span class="zn">高パフォーマンス</span></div><div class="zd">アクセルもブレーキも強い。集中力と休む力が高く、心も体も好調な状態。</div></div>
+        <div class="zone" style="border-color:#A4D9C4;"><div class="top"><span class="dot" style="background:#5BB98C;"></span><span class="zn">良いバランス</span></div><div class="zd">アクセルとブレーキがちょうどいい。安定して毎日を快適に過ごせる理想の状態。</div></div>
+        <div class="zone" style="border-color:#F0CB93;"><div class="top"><span class="dot" style="background:#D98A33;"></span><span class="zn">交感神経優位</span></div><div class="zd">アクセルが強くブレーキが弱め。緊張・ストレスが多く、休みにくい傾向。</div></div>
+        <div class="zone" style="border-color:#BCD0E0;"><div class="top"><span class="dot" style="background:#5aa0c0;"></span><span class="zn">副交感神経優位</span></div><div class="zd">ブレーキが強めの状態。眠気が出やすい・だるさを感じやすい傾向。</div></div>
+        <div class="zone" style="border-color:#B0BCD0;"><div class="top"><span class="dot" style="background:#7a8aa0;"></span><span class="zn">副交感神経不活性</span></div><div class="zd">ブレーキが働きにくい状態。休んでも切り替わりにくい傾向。</div></div>
+        <div class="zone" style="border-color:#D8D6CC;"><div class="top"><span class="dot" style="background:#9a9a90;"></span><span class="zn">両方不活性</span></div><div class="zd">アクセルもブレーキも弱め。ぼんやりしやすく、生活リズムを整えたい状態。</div></div>
+      </div>
+    </section>
+
+    <!-- 波形 -->
+    <section>
+      <div class="sec-label"><span class="pill">瞳孔波形</span><span class="h">目の動きで何がわかる？</span></div>
+      <p style="font-size:14px;color:#555;margin-bottom:14px;">目に光を当てると瞳孔（黒目）が縮んで、また広がります。この「縮む・広がる」の波の形が、自律神経の状態の目安になります。</p>
+      <div class="grid4">
+        <div class="wave"><div class="wt" style="color:#1d7a57;">健康・バランスよい</div><svg viewBox="0 0 100 40"><path d="M2 12 C20 12, 28 32, 42 32 C58 32, 70 14, 98 14" fill="none" stroke="#2E9E78" stroke-width="2.6" stroke-linecap="round"/></svg><div class="wd">スパッと縮んですぐ戻る。最も理想的な波形。</div></div>
+        <div class="wave"><div class="wt" style="color:#b56a16;">交感神経優位（緊張）</div><svg viewBox="0 0 100 40"><path d="M2 12 C18 12, 24 30, 40 30 C60 30, 78 28, 98 29" fill="none" stroke="#D98A33" stroke-width="2.6" stroke-linecap="round"/></svg><div class="wd">縮んだまま戻りにくい。ずっと緊張している状態。</div></div>
+        <div class="wave"><div class="wt" style="color:#2f7e9e;">疲労蓄積・眠気</div><svg viewBox="0 0 100 40"><path d="M2 14 C24 14, 30 35, 50 35 C72 35, 84 30, 98 28" fill="none" stroke="#5aa0c0" stroke-width="2.6" stroke-linecap="round"/></svg><div class="wd">深く沈んで長く戻らない。疲れや眠さのサイン。</div></div>
+        <div class="wave"><div class="wt" style="color:#8a6fb0;">不安・ストレス</div><svg viewBox="0 0 100 40"><path d="M2 20 Q10 9 18 20 T34 20 T50 20 T66 20 T82 20 T98 20" fill="none" stroke="#8a6fb0" stroke-width="2.6" stroke-linecap="round"/></svg><div class="wd">波がギザギザで不安定。緊張が強めの状態。</div></div>
+      </div>
+    </section>
+
+    <!-- ヒント -->
+    <section>
+      <div class="sec-label"><span class="pill">整えるヒント</span><span class="h">バランスを整えるには？</span></div>
+      <div class="grid2">
+        <div class="tip"><svg class="ti" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="16" cy="16" r="11"/><path d="M16 9 V16 L21 19"/></svg><div><div class="th">毎日同じ時間に寝る・起きる</div><div class="tc">体内時計が整うと、自律神経も安定しやすくなります。寝る前はスマホを控えめに。</div></div></div>
+        <div class="tip"><svg class="ti" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M6 16 C6 12, 26 12, 26 16 C26 22, 6 22, 6 16Z"/><path d="M16 12 V8"/></svg><div><div class="th">ゆっくり深呼吸する</div><div class="tc">4秒で吸って、8秒でゆっくり吐く。呼吸を整えると、休む力が働きやすくなります。</div></div></div>
+        <div class="tip"><svg class="ti" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="16" cy="7" r="3"/><path d="M16 11 L16 20 M16 14 L10 17 M16 14 L22 17 M16 20 L11 28 M16 20 L21 28"/></svg><div><div class="th">外を歩く・軽く動く</div><div class="tc">15〜30分のウォーキングで、活動と休息の切り替えが上手に。日光を浴びるのも◎。</div></div></div>
+        <div class="tip"><svg class="ti" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6 V14 M12 6 V14 M10.5 14 V26 M22 6 C19 6, 19 14, 22 14 L22 26"/></svg><div><div class="th">朝ごはんをちゃんと食べる</div><div class="tc">朝食は体を起こすスイッチ。卵や豆腐などのたんぱく質を意識するとなお良いです。</div></div></div>
+      </div>
+    </section>
+
+    <div class="note">※ 測定結果には個人差があります。本ページは健康管理の参考情報であり、特定の商品の効果や、医療的な診断・治療を目的とするものではありません。気になる点は医療機関にご相談ください。</div>
+  </div>
+
+  <footer>
+    <div class="wrap foot-in">
+      <div class="foot-co">福福株式会社</div>
+      <a class="foot-web" href="https://fukufuku-co.jp">fukufuku-co.jp</a>
+    </div>
+  </footer>
+
+</body>
+</html>
