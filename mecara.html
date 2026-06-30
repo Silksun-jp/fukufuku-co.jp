@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>メカラ ｜ 自律神経バランス解説 ｜ 福福株式会社</title>
+<title>自律神経チェック ｜ 自律神経バランス解説 ｜ 福福株式会社</title>
 <meta name="description" content="メカラは、今の自分の状態を知るためのセルフチェック体験です。自律神経のしくみと、結果の見方をやさしく解説します。特定の商品の効果を示すものではありません。">
 <style>
   @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700&family=Noto+Serif+JP:wght@400;500&display=swap');
@@ -24,7 +24,11 @@
 
   header { background:rgba(244,243,236,0.92); border-bottom:1px solid var(--line); position:sticky; top:0; z-index:10; backdrop-filter:blur(4px); }
   .head-in { display:flex; justify-content:space-between; align-items:baseline; padding:13px 0; }
-  .head-co { font-size:14px; font-weight:700; letter-spacing:0.04em; }
+  .head-co { font-size:14px; font-weight:700; letter-spacing:0.04em; color:var(--ink); text-decoration:none; }
+  .head-co:hover { color:var(--teal-d); }
+  .head-r { display:flex; flex-direction:column; align-items:flex-end; gap:4px; }
+  .head-home { font-size:12px; font-weight:700; color:var(--teal-d); text-decoration:none; }
+  .head-home:hover { text-decoration:underline; }
   .head-cat { font-size:11px; color:var(--soft); letter-spacing:0.14em; }
 
   /* hero */
@@ -127,8 +131,11 @@
 
   <header>
     <div class="wrap head-in">
-      <div class="head-co">福福株式会社</div>
-      <div class="head-cat">メカラ ｜ 自律神経バランス解説</div>
+      <a class="head-co" href="index.html">福福株式会社</a>
+      <div class="head-r">
+        <a class="head-home" href="index.html">← ホームに戻る</a>
+        <div class="head-cat">自律神経チェック ｜ 自律神経バランス解説</div>
+      </div>
     </div>
   </header>
 

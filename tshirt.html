@@ -21,8 +21,11 @@
   /* header */
   header { border-bottom:1px solid var(--line); background:rgba(251,250,246,0.9); position:sticky; top:0; z-index:10; backdrop-filter:saturate(120%) blur(4px); }
   .head-in { display:flex; align-items:center; justify-content:space-between; padding:14px 0; }
-  .brand { font-family:'Noto Serif JP', serif; font-size:20px; font-weight:500; letter-spacing:0.14em; color:var(--sage-deep); }
+  .brand { font-family:'Noto Serif JP', serif; font-size:20px; font-weight:500; letter-spacing:0.14em; color:var(--sage-deep); text-decoration:none; }
+  .brand:hover { color:var(--sage); }
   .head-r { text-align:right; }
+  .head-home { display:inline-block; font-size:12px; font-weight:700; color:var(--sage-deep); text-decoration:none; margin-bottom:3px; }
+  .head-home:hover { text-decoration:underline; }
   .head-co { font-size:12px; font-weight:500; letter-spacing:0.04em; }
   .head-cat { font-size:10px; color:var(--soft); letter-spacing:0.22em; margin-top:2px; }
 
@@ -106,8 +109,9 @@
 
   <header>
     <div class="wrap head-in">
-      <div class="brand">harmonize</div>
+      <a class="brand" href="index.html">harmonize</a>
       <div class="head-r">
+        <a class="head-home" href="index.html">← ホームに戻る</a>
         <div class="head-co">福福株式会社</div>
         <div class="head-cat">MY ONLY TEE</div>
       </div>
