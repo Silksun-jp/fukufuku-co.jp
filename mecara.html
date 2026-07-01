@@ -110,6 +110,22 @@
   .tip .th { font-size:15px; font-weight:700; }
   .tip .tc { font-size:13px; color:#555; line-height:1.7; margin-top:3px; }
 
+  /* explanation tables */
+  .tablewrap { border:1px solid var(--cardbd); border-radius:12px; overflow:hidden; background:#fff; }
+  .stable { width:100%; border-collapse:collapse; font-size:13.5px; }
+  .stable th, .stable td { padding:11px 14px; text-align:left; vertical-align:middle; border-bottom:1px solid var(--line); line-height:1.7; }
+  .stable thead th { background:var(--teal-d); color:#fff; font-weight:700; font-size:12.5px; letter-spacing:0.03em; border-bottom:none; }
+  .stable tbody tr:last-child td { border-bottom:none; }
+  .stable .pt { font-weight:700; white-space:nowrap; color:var(--ink); }
+  .stable .stt { font-weight:700; color:#555; }
+  .sbadge { display:inline-block; font-size:12px; font-weight:700; padding:3px 12px; border-radius:20px; white-space:nowrap; }
+  .sbadge.bad  { background:#FBE3DD; color:#C2503A; }
+  .sbadge.low  { background:#FBF0D6; color:#A9821C; }
+  .sbadge.good { background:#E6F2EA; color:#3A7D5C; }
+  .sbadge.best { background:#DCEEDF; color:#1D7A57; }
+  .ztd { display:flex; align-items:center; gap:8px; font-weight:700; }
+  .ztd .dot { width:13px; height:13px; border-radius:50%; flex-shrink:0; }
+
   .note { background:#fff; border:1px solid var(--cardbd); border-radius:12px; padding:16px 20px; margin-top:30px; font-size:12.5px; color:var(--soft); line-height:1.8; }
 
   footer { border-top:1px solid var(--line); margin-top:30px; padding:26px 0 40px; }
@@ -124,6 +140,8 @@
     .grid4 { grid-template-columns:1fr 1fr; }
     .steps { grid-template-columns:1fr 1fr; }
     .sec-label .h { font-size:18px; }
+    .stable th, .stable td { padding:9px 10px; font-size:12.5px; }
+    .ztd { white-space:nowrap; }
   }
 </style>
 </head>
@@ -252,6 +270,23 @@
       </div>
     </section>
 
+    <!-- 総合スコアの見方 -->
+    <section>
+      <div class="sec-label"><span class="pill">スコア</span><span class="h">総合スコアの見方</span></div>
+      <p style="font-size:14px;color:#555;margin-bottom:14px;">点数が何を表すかを4段階で整理しました。数値の意味の目安としてご覧ください。</p>
+      <div class="tablewrap">
+        <table class="stable">
+          <thead><tr><th>点数</th><th>区分</th><th>説明</th></tr></thead>
+          <tbody>
+            <tr><td class="pt">80〜100点</td><td><span class="sbadge best">とても良好</span></td><td>心も体も安定し、活動と休息のバランスがよく整っている状態。</td></tr>
+            <tr><td class="pt">60〜79点</td><td><span class="sbadge good">良好</span></td><td>大きな偏りがなく、日常を快適に過ごしやすい状態。</td></tr>
+            <tr><td class="pt">40〜59点</td><td><span class="sbadge low">やや低め</span></td><td>少し疲れや偏りが見られる状態。休息を意識したいサイン。</td></tr>
+            <tr><td class="pt">0〜39点</td><td><span class="sbadge bad">要注意</span></td><td>疲れがたまりやすい状態。生活リズムを見直すきっかけに。</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
     <!-- ゾーン -->
     <section>
       <div class="sec-label"><span class="pill">ゾーン解説</span><span class="h">6つのゾーンの意味</span></div>
@@ -262,6 +297,19 @@
         <div class="zone" style="border-color:#BCD0E0;"><div class="top"><span class="dot" style="background:#5aa0c0;"></span><span class="zn">副交感神経優位</span></div><div class="zd">ブレーキが強めの状態。眠気が出やすい・だるさを感じやすい傾向。</div></div>
         <div class="zone" style="border-color:#B0BCD0;"><div class="top"><span class="dot" style="background:#7a8aa0;"></span><span class="zn">副交感神経不活性</span></div><div class="zd">ブレーキが働きにくい状態。休んでも切り替わりにくい傾向。</div></div>
         <div class="zone" style="border-color:#D8D6CC;"><div class="top"><span class="dot" style="background:#9a9a90;"></span><span class="zn">両方不活性</span></div><div class="zd">アクセルもブレーキも弱め。ぼんやりしやすく、生活リズムを整えたい状態。</div></div>
+      </div>
+      <div class="tablewrap" style="margin-top:16px;">
+        <table class="stable">
+          <thead><tr><th>ゾーン</th><th>状態</th><th>特徴</th></tr></thead>
+          <tbody>
+            <tr><td><span class="ztd"><span class="dot" style="background:#2E9E78;"></span>高パフォーマンス</span></td><td class="stt">アクセル◎ ブレーキ◎</td><td>集中力と休む力が両方高く、心も体も好調な状態。</td></tr>
+            <tr><td><span class="ztd"><span class="dot" style="background:#5BB98C;"></span>良いバランス</span></td><td class="stt">アクセル○ ブレーキ○</td><td>ちょうどよく整い、安定して毎日を快適に過ごせる理想の状態。</td></tr>
+            <tr><td><span class="ztd"><span class="dot" style="background:#D98A33;"></span>交感神経優位</span></td><td class="stt">アクセル強め</td><td>緊張・ストレスが多めで、休みにくい傾向。</td></tr>
+            <tr><td><span class="ztd"><span class="dot" style="background:#5aa0c0;"></span>副交感神経優位</span></td><td class="stt">ブレーキ強め</td><td>眠気が出やすい・だるさを感じやすい傾向。</td></tr>
+            <tr><td><span class="ztd"><span class="dot" style="background:#7a8aa0;"></span>副交感神経不活性</span></td><td class="stt">ブレーキ弱め</td><td>休んでも切り替わりにくい傾向。</td></tr>
+            <tr><td><span class="ztd"><span class="dot" style="background:#9a9a90;"></span>両方不活性</span></td><td class="stt">アクセル弱 ブレーキ弱</td><td>ぼんやりしやすく、生活リズムを整えたい状態。</td></tr>
+          </tbody>
+        </table>
       </div>
     </section>
 
